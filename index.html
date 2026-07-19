@@ -42,6 +42,13 @@
             letter-spacing: -0.025em;
         }
 
+        h2 {
+            font-size: 1.2rem;
+            color: var(--subtitle-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
         .subtitle {
             font-size: 1.1rem;
             color: var(--subtitle-color);
@@ -132,6 +139,31 @@
             color: #94a3b8;
             font-weight: 500;
         }
+
+        /* ==========================================================================
+           CUSTOM MODULE THEMES
+           ========================================================================== */
+
+        /* Module 4: UKM Corporate Colors (Crimson Maroon & Soft Yellow Variant Accent) */
+        .theme-ukm {
+            --primary-color: #990000;       /* UKM Crimson Maroon */
+            --primary-hover: #730000;       
+        }
+        .theme-ukm .quiz-badge {
+            background-color: #fef9c3;      /* Soft corporate yellow background */
+            color: #854d0e;                 /* Darker gold/yellow text label */
+            border: 1px solid #fef08a;
+        }
+
+        /* Modules 5 & 6: Light Blue / Sky Cyan Theme */
+        .theme-lightblue {
+            --primary-color: #0284c7;       /* Light Sky Blue */
+            --primary-hover: #0369a1;
+        }
+        .theme-lightblue .quiz-badge {
+            background-color: #e0f2fe;      /* Matching light blue/cyan badge accent background */
+            color: #0369a1;                 /* Matching darker blue badge text color */
+        }
     </style>
 </head>
 <body>
@@ -145,6 +177,7 @@
 
         <main class="quiz-grid">
             
+            <!-- Module 01 (Keeps Default Blue Color) -->
             <div class="quiz-card">
                 <div>
                     <span class="quiz-badge">Module 01</span>
@@ -154,6 +187,7 @@
                 <a href="Research_Philosophies.html" class="launch-btn">Launch Quiz</a>
             </div>
                    
+            <!-- Module 02 (Keeps Default Blue Color) -->
             <div class="quiz-card">
                 <div>
                     <span class="quiz-badge">Module 02</span>
@@ -163,6 +197,7 @@
                 <a href="Research_Problems.html" class="launch-btn">Launch Quiz</a>
             </div>
 
+            <!-- Module 03 (Keeps Default Blue Color) -->
             <div class="quiz-card">
                 <div>
                     <span class="quiz-badge">Module 03</span>
@@ -172,7 +207,8 @@
                 <a href="Abstract_LR.html" class="launch-btn">Launch Quiz</a>
             </div>
 
-            <div class="quiz-card">
+            <!-- Module 04 (Styled with UKM Corporate Theme Class) -->
+            <div class="quiz-card theme-ukm">
                 <div>
                     <span class="quiz-badge">Module 04</span>
                     <h2 class="quiz-title">Gaya UKM quiz</h2>
@@ -181,7 +217,8 @@
                 <a href="Gaya.html" class="launch-btn">Launch Quiz</a>
             </div>
 
-            <div class="quiz-card">
+            <!-- Module 05 (Styled with Light Blue Theme Class) -->
+            <div class="quiz-card theme-lightblue">
                 <div>
                     <span class="quiz-badge">Module 05</span>
                     <h2 class="quiz-title">Sampling Distribution</h2>
@@ -190,7 +227,8 @@
                 <a href="sampling_dist.html" class="launch-btn">Launch Quiz</a>
             </div>
 
-            <div class="quiz-card">
+            <!-- Module 06 (Styled with Light Blue Theme Class) -->
+            <div class="quiz-card theme-lightblue">
                 <div>
                     <span class="quiz-badge">Module 06</span>
                     <h2 class="quiz-title">Sampling Techniques</h2>
@@ -199,6 +237,7 @@
                 <a href="sampling_tech.html" class="launch-btn">Launch Quiz</a>
             </div>
 
+            <!-- Module 07 Coming Soon Placeholder -->
             <div class="quiz-card placeholder">
                 <div class="placeholder-text">
                     <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 10px;">
