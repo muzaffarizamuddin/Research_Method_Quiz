@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literature Search & Academic Writing Quiz</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --primary-color: #15803d; /* Deep Forest Green for Literature & Writing */
+            --primary-hover: #166534;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --correct-color: #10b981;
+            --incorrect-color: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .quiz-container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .badge {
+            background-color: #f0fdf4;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 10px 0 5px 0;
+            font-weight: 800;
+        }
+
+        .description {
+            color: #475569;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .score-summary {
+            background-color: #f1f5f9;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .option-item:hover {
+            background-color: #f8fafc;
+            border-color: #cbd5e1;
+        }
+
+        .option-item input[type="radio"] {
+            margin-right: 12px;
+            transform: scale(1.1);
+        }
+
+        /* Live Feedback Styling States */
+        .option-item.correct {
+            background-color: #ecfdf5 !important;
+            border-color: var(--correct-color) !important;
+            color: #065f46;
+            font-weight: 500;
+        }
+
+        .option-item.incorrect {
+            background-color: #fef2f2 !important;
+            border-color: var(--incorrect-color) !important;
+            color: #991b1b;
+        }
+
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 12px 15px;
+            background-color: #f8fafc;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 4px 4px 0;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <header>
+        <span class="badge">STQP6014: Exam Practice</span>
+        <h1>Lit. Search & Academic Writing</h1>
+        <p class="description">30 questions comprehensively covering literature search strings, writing properties, and abstract/review structures.</p>
+    </header>
+
+    <div class="score-summary" id="scoreSummary">
+        Score: 0 / 30 answered correctly
+    </div>
+
+    <!-- Section 1: Literature Search Techniques -->
+    <div class="question-card" id="q1-card">
+        <p class="question-text">1. According to the guest lecture notes by Dr. Saharah Sapiyi, which technique is explicitly grouped as a core mechanism for building a database search string?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q1" value="A"> A) Automated Web Scraping APIs</label>
+            <label class="option-item"><input type="radio" name="q1" value="B"> B) Phrase Searching, Wild cards / Truncation, and Boolean Operators</label>
+            <label class="option-item"><input type="radio" name="q1" value="C"> C) Deep Learning Vector Embeddings</label>
+            <label class="option-item"><input type="radio" name="q1" value="D"> D) Hyperparameter Token Optimization</label>
+        </div>
+        <div class="explanation" id="ex1"><strong>Explanation:</strong> The slides explicitly state that after identifying keywords, you construct a search string/query string using three core techniques: Phrase Searching, Wild card / Truncation, and Boolean Operators[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q2-card">
+        <p class="question-text">2. Dr. Saharah Sapiyi, the cited authority on Research Materials Searching Techniques, currently holds what institutional leadership role?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q2" value="A"> A) Editor-in-Chief of the UKM Science Journal</label>
+            <label class="option-item"><input type="radio" name="q2" value="B"> B) Chief Legal Consultant for Intellectual Property Rights</label>
+            <label class="option-item"><input type="radio" name="q2" value="C"> C) INTAN Head of Centre, Communication and Language Studies</label>
+            <label class="option-item"><input type="radio" name="q2" value="D"> D) Director of Computer Science Research and Operations</label>
+        </div>
+        <div class="explanation" id="ex2"><strong>Explanation:</strong> The profile details note that Dr. Saharah Sapiyi (PhD from UKM) is currently the INTAN Head of Centre, Communication and Language Studies[cite: 4].</div>
+    </div>
+
+    <!-- Section 2: Academic Writing Definition & Properties -->
+    <div class="question-card" id="q3-card">
+        <p class="question-text">3. How is "Academic Writing" fundamentally defined in university and scholarly publishing contexts?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q3" value="A"> A) An informal, highly creative narrative prose used to express unfiltered personal observations.</label>
+            <label class="option-item"><input type="radio" name="q3" value="B"> B) A formal style of writing used in universities and scholarly publications such as textbooks and journal articles.</label>
+            <label class="option-item"><input type="radio" name="q3" value="C"> C) A fast-paced colloquial style specifically targeted toward social media micro-blog audiences.</label>
+            <label class="option-item"><input type="radio" name="q3" value="D"> D) A commercial copywriting protocol optimized for tech patent monetization pitches.</label>
+        </div>
+        <div class="explanation" id="ex3"><strong>Explanation:</strong> Academic writing is a formal style of writing used in universities and scholarly publications with specific conventions in terms of content, structure, and style[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q4-card">
+        <p class="question-text">4. According to the baseline criteria, which of the following is an attribute that academic writing MUST possess?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q4" value="A"> A) Personal and emotional biases</label>
+            <label class="option-item"><input type="radio" name="q4" value="B"> B) Emotive, grandiose language structures</label>
+            <label class="option-item"><input type="radio" name="q4" value="C"> C) Long-winded descriptive narratives</label>
+            <label class="option-item"><input type="radio" name="q4" value="D"> D) Formal, unbiased, clear, precise, and well-structured formatting</label>
+        </div>
+        <div class="explanation" id="ex4"><strong>Explanation:</strong> The slides list that academic writing is formal/unbiased, clear/precise, focused/well-structured, well-sourced, and correct/consistent[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q5-card">
+        <p class="question-text">5. Under the standard rules of academic style, which of the following properties is strictly excluded (labeled as "Academic writing is NOT...")?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q5" value="A"> A) Empirically balanced</label>
+            <label class="option-item"><input type="radio" name="q5" value="B"> B) Subject-specific vocabulary use</label>
+            <label class="option-item"><input type="radio" name="q5" value="C"> C) Personal, long-winded, emotive, and grandiose</label>
+            <label class="option-item"><input type="radio" name="q5" value="D"> D) Highly referenced and sourced</label>
+        </div>
+        <div class="explanation" id="ex5"><strong>Explanation:</strong> The slide explicitly states that "Academic writing is not: Personal, Long-winded, or Emotive and grandiose"[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q6-card">
+        <p class="question-text">6. What does it mean for academic text to be "Formal and Unbiased"?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q6" value="A"> A) Stating subjective arguments and relying heavily on intuitive preconceptions.</label>
+            <label class="option-item"><input type="radio" name="q6" value="B"> B) Conveying information impartially and basing all claims on evidence rather than author preconceptions.</label>
+            <label class="option-item"><input type="radio" name="q6" value="C"> C) Omitting the methodology and limitations sections to make the results look perfect.</label>
+            <label class="option-item"><input type="radio" name="q6" value="D"> D) Ensuring the data cannot be audited or replicated by peer groups.</label>
+        </div>
+        <div class="explanation" id="ex6"><strong>Explanation:</strong> Formal and unbiased text conveys information in an impartial way, backing claims with relevant evidence and openly sharing methodology and limitations[cite: 4].</div>
+    </div>
+
+    <!-- Section 3: Types of Academic Texts -->
+    <div class="question-card" id="q7-card">
+        <p class="question-text">7. Match the definition: "A fairly short, self-contained argument, often using sources from a class in response to a question provided by an instructor."</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q7" value="A"> A) Research Proposal</label>
+            <label class="option-item"><input type="radio" name="q7" value="B"> B) Lab Report</label>
+            <label class="option-item"><input type="radio" name="q7" value="C"> C) Essay</label>
+            <label class="option-item"><input type="radio" name="q7" value="D"> D) Thesis/Dissertation</label>
+        </div>
+        <div class="explanation" id="ex7"><strong>Explanation:</strong> This matches the exact table definition provided for an Essay[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q8-card">
+        <p class="question-text">8. How does the lecture table differentiate a "Research Paper" from a class "Essay"?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q8" value="A"> A) A research paper relies entirely on emotional, grandiose arguments.</label>
+            <label class="option-item"><input type="radio" name="q8" value="B"> B) A research paper is an in-depth investigation based on independent research, often in response to a question chosen by the student.</label>
+            <label class="option-item"><input type="radio" name="q8" value="C"> C) A research paper avoids structural formatting and formatting styles.</label>
+            <label class="option-item"><input type="radio" name="q8" value="D"> D) A research paper is much shorter and excludes citation records.</label>
+        </div>
+        <div class="explanation" id="ex8"><strong>Explanation:</strong> A research paper is defined as a more in-depth investigation based on independent research, frequently following a question the student chooses[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q9-card">
+        <p class="question-text">9. Which text type represents an "outline of a potential topic and plan for a future dissertation or research project"?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q9" value="A"> A) Annotated Bibliography</label>
+            <label class="option-item"><input type="radio" name="q9" value="B"> B) Research Proposal</label>
+            <label class="option-item"><input type="radio" name="q9" value="C"> C) Lab Report</label>
+            <label class="option-item"><input type="radio" name="q9" value="D"> D) Literature Review</label>
+        </div>
+        <div class="explanation" id="ex9"><strong>Explanation:</strong> An outline and plan for a future project or dissertation is classified precisely as a Research Proposal[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q10-card">
+        <p class="question-text">10. What is the explicit definition of a "Literature Review" as a standalone text type?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q10" value="A"> A) A quick list of raw URL bookmarks copied from an internet search tool.</label>
+            <label class="option-item"><input type="radio" name="q10" value="B"> B) A critical synthesis of existing research on a topic, usually written in order to inform the approach of a new piece of research.</label>
+            <label class="option-item"><input type="radio" name="q10" value="C"> C) A detailed, step-by-step description of an empirical laboratory experiment's runtime code.</label>
+            <label class="option-item"><input type="radio" name="q10" value="D"> D) A promotional abstract meant to market software features to investors.</label>
+        </div>
+        <div class="explanation" id="ex10"><strong>Explanation:</strong> A literature review is defined as a critical synthesis of existing research on a topic, written specifically to inform the approach of a new piece of research[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q11-card">
+        <p class="question-text">11. A text type containing "a list of source references with a short description or evaluation of each source" is called a(n):</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q11" value="A"> A) Annotated Bibliography</label>
+            <label class="option-item"><input type="radio" name="q11" value="B"> B) Lab Report</label>
+            <label class="option-item"><input type="radio" name="q11" value="C"> C) Thesis Outline</label>
+            <label class="option-item"><input type="radio" name="q11" value="D"> D) Structural Essay</label>
+        </div>
+        <div class="explanation" id="ex11"><strong>Explanation:</strong> A list of references paired with a short description/evaluation of each matches an Annotated Bibliography[cite: 4].</div>
+    </div>
+
+    <!-- Section 4: Seven Features of Academic Writing (Sheldon Smith) -->
+    <div class="question-card" id="q12-card">
+        <p class="question-text">12. Sheldon Smith (EAPFoundation.com) outlines how many key features that both student and expert academic writing must adhere to?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q12" value="A"> A) 4 features</label>
+            <label class="option-item"><input type="radio" name="q12" value="B"> B) 5 features</label>
+            <label class="option-item"><input type="radio" name="q12" value="C"> C) 7 features</label>
+            <label class="option-item"><input type="radio" name="q12" value="D"> D) 10 features</label>
+        </div>
+        <div class="explanation" id="ex12"><strong>Explanation:</strong> The framework diagram by Sheldon Smith maps out exactly 7 features: Structured, Evidenced, Critical, Balanced, Precise, Objective, and Formal[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q13-card">
+        <p class="question-text">13. Under Sheldon Smith's features, what does the "Critical" attribute explicitly demand from an academic writer?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q13" value="A"> A) Accepting all published information as definitive facts without checking.</label>
+            <label class="option-item"><input type="radio" name="q13" value="B"> B) An academic writer should not accept everything as fact; information must be analyzed and evaluated before it is used.</label>
+            <label class="option-item"><input type="radio" name="q13" value="C"> C) Attacking other researchers' work using emotive and highly opinionated words.</label>
+            <label class="option-item"><input type="radio" name="q13" value="D"> D) Focusing only on writing complex sentences that are hard to decode.</label>
+        </div>
+        <div class="explanation" id="ex13"><strong>Explanation:</strong> Being critical means an academic writer does not accept assertions at face value; instead, they analyze and evaluate information prior to integration[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q14-card">
+        <p class="question-text">14. To show how strong a claim is, an academic writer uses hedges like "the evidence suggests" or boosters like "clearly." Which feature is this?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q14" value="A"> A) Formal</label>
+            <label class="option-item"><input type="radio" name="q14" value="B"> B) Objective</label>
+            <label class="option-item"><input type="radio" name="q14" value="C"> C) Precise</label>
+            <label class="option-item"><input type="radio" name="q14" value="D"> D) Balanced</label>
+        </div>
+        <div class="explanation" id="ex14"><strong>Explanation:</strong> The "Balanced" feature requires giving consideration to all sides, remaining unbiased, and weighting claims appropriately using hedges or boosters[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q15-card">
+        <p class="question-text">15. The "Objective" feature emphasizes arguments and information over the writer. What linguistic pattern does it prioritize?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q15" value="A"> A) First-person conversational narratives and slang words.</label>
+            <label class="option-item"><input type="radio" name="q15" value="B"> B) It tends to use nouns/noun phrases more than verbs/adverbs, as well as passive structures.</label>
+            <label class="option-item"><input type="radio" name="q15" value="C"> C) Active conversational questions directed at the audience.</label>
+            <label class="option-item"><input type="radio" name="q15" value="D"> D) Short sentence structural fragments mixed with informal expressions.</label>
+        </div>
+        <div class="explanation" id="ex15"><strong>Explanation:</strong> Objectivity in academic text shifts focus away from the author by leveraging nouns, noun phrases, and passive voice patterns[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q16-card">
+        <p class="question-text">16. Which feature is defined by "avoiding contractions and colloquial or informal words or expressions, using longer words and more complex sentences"?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q16" value="A"> A) Formal</label>
+            <label class="option-item"><input type="radio" name="q16" value="B"> B) Evidenced</label>
+            <label class="option-item"><input type="radio" name="q16" value="C"> C) Balanced</label>
+            <label class="option-item"><input type="radio" name="q16" value="D"> D) Critical</label>
+        </div>
+        <div class="explanation" id="ex16"><strong>Explanation:</strong> The "Formal" feature strictly restricts the use of everyday colloquial language, informal phrases, and contractions[cite: 4].</div>
+    </div>
+
+    <!-- Section 5: SPAM Framework & Abstracts -->
+    <div class="question-card" id="q17-card">
+        <p class="question-text">17. A scientific paper is fundamentally a report about four distinct entities captured by the acronym "SPAM". What does SPAM stand for?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q17" value="A"> A) Search, Proposal, Abstract, Methodology</label>
+            <label class="option-item"><input type="radio" name="q17" value="B"> B) System, Problems, Achievements, Methods</label>
+            <label class="option-item"><input type="radio" name="q17" value="C"> C) Synthesis, Precision, Accuracy, Metrics</label>
+            <label class="option-item"><input type="radio" name="q17" value="D"> D) Scope, Paraphrase, Analysis, Management</label>
+        </div>
+        <div class="explanation" id="ex17"><strong>Explanation:</strong> The slides explain that writing a paper is all about SPAM: System under study, Problems to be solved, Achievements in solving them, and Methods used to achieve them[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q18-card">
+        <p class="question-text">18. Based on the SPAM framework, an abstract is defined as a concise summary of a research study that includes which elements?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q18" value="A"> A) Extended background history, author resumes, and funding source data.</label>
+            <label class="option-item"><input type="radio" name="q18" value="B"> B) System/scope of study, Problems, Achievements/results, and Methods.</label>
+            <label class="option-item"><input type="radio" name="q18" value="C"> C) Full citation directories, database links, and complete data tables.</label>
+            <label class="option-item"><input type="radio" name="q18" value="D"> D) Future career goals and operational software license limits.</label>
+        </div>
+        <div class="explanation" id="ex18"><strong>Explanation:</strong> An abstract distills the entire study by summarizing the System/scope, Problems, Achievements/results, and Methods[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q19-card">
+        <p class="question-text">19. What are the baseline text length boundaries specified for a good, concise abstract?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q19" value="A"> A) Exactly 50 words or less</label>
+            <label class="option-item"><input type="radio" name="q19" value="B"> B) Usually 150-250 words</label>
+            <label class="option-item"><input type="radio" name="q19" value="C"> C) Between 500 and 1,000 words</label>
+            <label class="option-item"><input type="radio" name="q19" value="D"> D) Exactly one full page regardless of word count</label>
+        </div>
+        <div class="explanation" id="ex19"><strong>Explanation:</strong> The text defines a good abstract's length constraint as being concise, usually falling between 150-250 words[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q20-card">
+        <p class="question-text">20. What are the four structural blocks that form the classic "IMRAD" empirical research abstract model?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q20" value="A"> A) Inquiry, Modeling, Responding, Analyzing, Documenting</label>
+            <label class="option-item"><input type="radio" name="q20" value="B"> B) Introduction, Methods, Results, Discussion/Conclusion</label>
+            <label class="option-item"><input type="radio" name="q20" value="C"> C) Indexing, Metadata, Reviewing, Abstracting, Deploying</label>
+            <label class="option-item"><input type="radio" name="q20" value="D"> D) Investigation, Measurement, Rationale, Application, Development</label>
+        </div>
+        <div class="explanation" id="ex20"><strong>Explanation:</strong> IMRAD stands for Introduction ("What is it about?"), Methods ("How was it conducted?"), Results ("What did you find?"), and Discussion/Conclusion ("What does it mean?")[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q21-card">
+        <p class="question-text">21. In structured abstract formats, which section answers the prompt: "What the research aimed to do"?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q21" value="A"> A) Background / Motivation</label>
+            <label class="option-item"><input type="radio" name="q21" value="B"> B) Objectives</label>
+            <label class="option-item"><input type="radio" name="q21" value="C"> C) Results</label>
+            <label class="option-item"><input type="radio" name="q21" value="D"> D) Methods</label>
+        </div>
+        <div class="explanation" id="ex21"><strong>Explanation:</strong> Under structured variations, the Objectives block maps directly to what the research explicitly aimed to do[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q22-card">
+        <p class="question-text">22. In the provided sample abstract on "Predicting Student Performance Using Machine Learning", what concrete achievement/finding is stated?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q22" value="A"> A) Support Vector Machines achieved a low 45% accuracy score.</label>
+            <label class="option-item"><input type="radio" name="q22" value="B"> B) The Random Forest model achieved the highest accuracy (87%).</label>
+            <label class="option-item"><input type="radio" name="q22" value="C"> C) Logistic Regression was discarded due to a lack of processing data.</label>
+            <label class="option-item"><input type="radio" name="q22" value="D"> D) A dataset of 10,000 students was completely manual-logged.</label>
+        </div>
+        <div class="explanation" id="ex22"><strong>Explanation:</strong> The example abstract text explicitly states: "The Random Forest model achieved the highest accuracy (87%) and offered key insights into feature importance"[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q23-card">
+        <p class="question-text">23. Which of the following is listed as a critical mistake to avoid when drafting an abstract?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q23" value="A"> A) Being too concise and logical</label>
+            <label class="option-item"><input type="radio" name="q23" value="B"> B) Including citations, references, or undefined acronyms</label>
+            <label class="option-item"><input type="radio" name="q23" value="C"> C) Explicitly stating the main findings or results</label>
+            <label class="option-item"><input type="radio" name="q23" value="D"> D) Defining the target dataset size clearly</label>
+        </div>
+        <div class="explanation" id="ex23"><strong>Explanation:</strong> Common abstract errors include: being too vague, including citations/references, writing too much background, omitting key results, and using acronyms without definition[cite: 4].</div>
+    </div>
+
+    <!-- Section 6: Literature Review & The 5C Model -->
+    <div class="question-card" id="q24-card">
+        <p class="question-text">24. What is the fundamental purpose of conducting a critical literature review?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q24" value="A"> A) To summarize papers sequentially without evaluating them.</label>
+            <label class="option-item"><input type="radio" name="q24" value="B"> B) To copy textbook chapters directly into your own work.</label>
+            <label class="option-item"><input type="radio" name="q24" value="C"> C) To evaluate strengths/weaknesses, assess methodological rigor/relevance, and consider a paper's contribution to the field.</label>
+            <label class="option-item"><input type="radio" name="q24" value="D"> D) To compile a simple list of hyperlinks without any accompanying commentary.</label>
+        </div>
+        <div class="explanation" id="ex24"><strong>Explanation:</strong> A literature review requires a critical lens that evaluates methodological rigor, weights strengths and weaknesses, and balances implications[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q25-card">
+        <p class="question-text">25. What are the components that form the "5C Model" review framework?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q25" value="A"> A) Citation, Code, Compilation, Correction, Commerce</label>
+            <label class="option-item"><input type="radio" name="q25" value="B"> B) Context, Content, Credibility, Contribution, Critique</label>
+            <label class="option-item"><input type="radio" name="q25" value="C"> C) Criteria, Complexity, Choice, Category, Conclusion</label>
+            <label class="option-item"><input type="radio" name="q25" value="D"> D) Case-study, Causal, Cross-sectional, Critical, Carefulness</label>
+        </div>
+        <div class="explanation" id="ex25"><strong>Explanation:</strong> The 5C framework template table lists exactly: Context, Content, Credibility, Contribution, and Critique[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q26-card">
+        <p class="question-text">26. Under the 5C model framework, which aspect asks the guiding questions: "What is the research problem? Why is it important?"</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q26" value="A"> A) Content</label>
+            <label class="option-item"><input type="radio" name="q26" value="B"> B) Contribution</label>
+            <label class="option-item"><input type="radio" name="q26" value="C"> C) Context</label>
+            <label class="option-item"><input type="radio" name="q26" value="D"> D) Credibility</label>
+        </div>
+        <div class="explanation" id="ex26"><strong>Explanation:</strong> Mapping out the baseline problem background and its significance corresponds to the Context pillar[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q27-card">
+        <p class="question-text">27. Which 5C model parameter evaluates whether the source paper's methodology is appropriate and well-executed?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q27" value="A"> A) Critique</label>
+            <label class="option-item"><input type="radio" name="q27" value="B"> B) Content</label>
+            <label class="option-item"><input type="radio" name="q27" value="C"> C) Credibility</label>
+            <label class="option-item"><input type="radio" name="q27" value="D"> D) Contribution</label>
+        </div>
+        <div class="explanation" id="ex27"><strong>Explanation:</strong> Checking structural execution, validation checks, and choice of method maps directly to evaluating Credibility[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q28-card">
+        <p class="question-text">28. The question "What are the limitations, biases, or gaps?" directly aligns with which element of the 5C model?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q28" value="A"> A) Context</label>
+            <label class="option-item"><input type="radio" name="q28" value="B"> B) Critique</label>
+            <label class="option-item"><input type="radio" name="q28" value="C"> C) Content</label>
+            <label class="option-item"><input type="radio" name="q28" value="D"> D) Credibility</label>
+        </div>
+        <div class="explanation" id="ex28"><strong>Explanation:</strong> Analyzing errors, blindspots, and weaknesses belongs to the Critique step[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q29-card">
+        <p class="question-text">29. In the sample critical review of the Customer Churn paper, what is pointed out as a specific technical *strength* of that study?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q29" value="A"> A) Total inclusion of automated web scraping functions.</label>
+            <label class="option-item"><input type="radio" name="q29" value="B"> B) The inclusion of feature importance, which enhances model interpretability.</label>
+            <label class="option-item"><input type="radio" name="q29" value="C"> C) The use of completely fictional data frameworks.</label>
+            <label class="option-item"><input type="radio" name="q29" value="D"> D) Complete omission of any hyperparameter configuration data.</label>
+        </div>
+        <div class="explanation" id="ex29"><strong>Explanation:</strong> The example review states: "A strength of the paper is the inclusion of feature importance, which enhances interpretability, especially with Random Forest and XGBoost"[cite: 4].</div>
+    </div>
+
+    <div class="question-card" id="q30-card">
+        <p class="question-text">30. What limitation is exposed in the *Critique* section of the sample review for the customer churn paper?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q30" value="A"> A) It evaluates too many different machine learning models at once.</label>
+            <label class="option-item"><input type="radio" name="q30" value="B"> B) The abstract exceeds 500 words in length.</label>
+            <label class="option-item"><input type="radio" name="q30" value="C"> C) It lacks clarity on hyperparameter tuning, uses a slightly outdated dataset, and omits ethical implications or biases.</label>
+            <label class="option-item"><input type="radio" name="q30" value="D"> D) It uses too many recent behavioral variables such as app usage logs.</label>
+        </div>
+        <div class="explanation" id="ex30"><strong>Explanation:</strong> The sample critique explicitly flags lack of clarity on tuning, an outdated dataset lacking recent behavioral indicators, and an absence of ethical or bias considerations[cite: 4].</div>
+    </div>
+
+</div>
+
+<script>
+    // Configuration dictionary detailing correct solutions matching answer choices
+    const solutions = {
+        q1: 'B', q2: 'C', q3: 'B', q4: 'D', q5: 'C',
+        q6: 'B', q7: 'C', q8: 'B', q9: 'B', q10: 'B',
+        q11: 'A', q12: 'C', q13: 'B', q14: 'D', q15: 'B',
+        q16: 'A', q17: 'B', q18: 'B', q19: 'B', q20: 'B',
+        q21: 'B', q22: 'B', q23: 'B', q24: 'C', q25: 'B',
+        q26: 'C', q27: 'C', q28: 'B', q29: 'B', q30: 'C'
+    };
+
+    let points = {};
+    const summaryDisplay = document.getElementById('scoreSummary');
+
+    function updateScoreSummary() {
+        const totalIdentified = Object.keys(points).length;
+        const totalCorrectAnswers = Object.values(points).reduce((acc, curr) => acc + curr, 0);
+        summaryDisplay.textContent = `Score: ${totalCorrectAnswers} / 30 correct (${totalIdentified} attempted)`;
+    }
+
+    // Attach immediate interactive evaluation events to all radio items
+    document.querySelectorAll('.option-item input[type="radio"]').forEach(element => {
+        element.addEventListener('change', function() {
+            const currentQuestionId = this.name; 
+            const chosenOptionValue = this.value;
+            const validSolutionValue = solutions[currentQuestionId];
+            
+            const parentBlock = document.getElementById(currentQuestionId + '-card');
+            const sisterLabels = parentBlock.querySelectorAll('.option-item');
+            const targetExplanation = document.getElementById('ex' + currentQuestionId.slice(1));
+
+            // Reset design attributes across current sibling choices
+            sisterLabels.forEach(lbl => {
+                lbl.classList.remove('correct', 'incorrect');
+            });
+
+            // Evaluate chosen condition accuracy
+            if (chosenOptionValue === validSolutionValue) {
+                this.parentElement.classList.add('correct');
+                points[currentQuestionId] = 1;
+            } else {
+                this.parentElement.classList.add('incorrect');
+                points[currentQuestionId] = 0;
+
+                // Emphasize correct layout value instantly for study clarity
+                sisterLabels.forEach(lbl => {
+                    if (lbl.querySelector('input').value === validSolutionValue) {
+                        lbl.classList.add('correct');
+                    }
+                });
+            }
+
+            // Expose the hidden rationale metadata block
+            targetExplanation.style.display = 'block';
+            updateScoreSummary();
+        });
+    });
+</script>
+
+</body>
+</html>

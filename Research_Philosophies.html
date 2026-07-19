@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Methodology Comprehensive Quiz</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --primary-color: #6d28d9; /* Deep Purple theme for Methodology */
+            --primary-hover: #5b21b6;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --correct-color: #10b981;
+            --incorrect-color: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .quiz-container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .badge {
+            background-color: #f5f3ff;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 10px 0 5px 0;
+            font-weight: 800;
+        }
+
+        .description {
+            color: #475569;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .score-summary {
+            background-color: #f1f5f9;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .option-item:hover {
+            background-color: #f8fafc;
+            border-color: #cbd5e1;
+        }
+
+        .option-item input[type="radio"] {
+            margin-right: 12px;
+            transform: scale(1.1);
+        }
+
+        /* Live Feedback Styling States */
+        .option-item.correct {
+            background-color: #ecfdf5 !important;
+            border-color: var(--correct-color) !important;
+            color: #065f46;
+            font-weight: 500;
+        }
+
+        .option-item.incorrect {
+            background-color: #fef2f2 !important;
+            border-color: var(--incorrect-color) !important;
+            color: #991b1b;
+        }
+
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 12px 15px;
+            background-color: #f8fafc;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 4px 4px 0;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <header>
+        <span class="badge">STQP6014: Research Methodology</span>
+        <h1>Research Philosophies & Principles Quiz</h1>
+        <p class="description">20 core practice questions based on lecture notes. Preparation for the Final Exam.</p>
+    </header>
+
+    <div class="score-summary" id="scoreSummary">
+        Score: 0 / 20 answered correctly
+    </div>
+
+    <!-- Question 1 -->
+    <div class="question-card" id="q1-card">
+        <p class="question-text">1. Which of the following best defines "research" according to Oxford Languages and standard methodologies?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q1" value="A"> A) An informal gathering of personal opinions to support an argument.</label>
+            <label class="option-item"><input type="radio" name="q1" value="B"> B) The systematic investigation into and study of materials and sources to establish facts and reach new conclusions.</label>
+            <label class="option-item"><input type="radio" name="q1" value="C"> C) The rapid publication of scientific work regardless of raw data backing.</label>
+            <label class="option-item"><input type="radio" name="q1" value="D"> D) A commercial process focused strictly on mass production optimization.</label>
+        </div>
+        <div class="explanation" id="ex1"><strong>Explanation:</strong> Research is defined as a systematic process of inquiry aimed at discovering, interpreting, and revising facts using data, evidence, and critical analysis.</div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question-card" id="q2-card">
+        <p class="question-text">2. In defining "Research Quality", the highest quality is achieved when the biggest impact is met with which of the following combinations?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q2" value="A"> A) Longest time, highest complexity, and most expensive budget.</label>
+            <label class="option-item"><input type="radio" name="q2" value="B"> B) Shortest time, simplest approach, and lowest cost/least resources.</label>
+            <label class="option-item"><input type="radio" name="q2" value="C"> C) Maximum number of researchers, complex software tools, and longest reports.</label>
+            <label class="option-item"><input type="radio" name="q2" value="D"> D) Commercial backing, international authors, and experimental equipment.</label>
+        </div>
+        <div class="explanation" id="ex2"><strong>Explanation:</strong> Research gain maps Output against Input & Process. Quality research maximizes impact while keeping time short, the approach simple, and costs/resources low.</div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question-card" id="q3-card">
+        <p class="question-text">3. What is the main purpose of a "Research Methodology"?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q3" value="A"> A) To calculate the financial budget needed for a project.</label>
+            <label class="option-item"><input type="radio" name="q3" value="B"> B) To describe or explain the plan for how research will be conducted, including data collection and analysis.</label>
+            <label class="option-item"><input type="radio" name="q3" value="C"> C) To register a patent or copyright with government bodies.</label>
+            <label class="option-item"><input type="radio" name="q3" value="D"> D) To compile a list of target journals for immediate submission.</label>
+        </div>
+        <div class="explanation" id="ex3"><strong>Explanation:</strong> Methodology describes how a researcher intends to carry out their study to solve problems and ensure valid, reliable results.</div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question-card" id="q4-card">
+        <p class="question-text">4. Which of the following lists the first three chronological steps in conducting research?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q4" value="A"> A) Analyze, Protect, Commercialize</label>
+            <label class="option-item"><input type="radio" name="q4" value="B"> B) Write, Develop, Protect</label>
+            <label class="option-item"><input type="radio" name="q4" value="C"> C) Plan, Execute, Analyze</label>
+            <label class="option-item"><input type="radio" name="q4" value="D"> D) Execute, Publish, Develop</label>
+        </div>
+        <div class="explanation" id="ex4"><strong>Explanation:</strong> The research flow sequence progresses through: 1. Plan, 2. Execute, 3. Analyze, 4. Write and Publish, 5. Protect, 6. Develop, 7. Commercialize.</div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question-card" id="q5-card">
+        <p class="question-text">5. Saunders' Research Onion model consists of how many layers that must be peeled back to build a methodology?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q5" value="A"> A) 3 layers</label>
+            <label class="option-item"><input type="radio" name="q5" value="B"> B) 4 layers</label>
+            <label class="option-item"><input type="radio" name="q5" value="C"> C) 6 layers</label>
+            <label class="option-item"><input type="radio" name="q5" value="D"> D) 8 layers</label>
+        </div>
+        <div class="explanation" id="ex5"><strong>Explanation:</strong> The onion has 6 layers: Philosophy, Approach, Strategy, Choices, Time Horizon, and Techniques & Procedures.</div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question-card" id="q6-card">
+        <p class="question-text">6. Which research component explicitly defines "how we can obtain knowledge and come to understand things"?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q6" value="A"> A) Ontology</label>
+            <label class="option-item"><input type="radio" name="q6" value="B"> B) Epistemology</label>
+            <label class="option-item"><input type="radio" name="q6" value="C"> C) Time Horizon</label>
+            <label class="option-item"><input type="radio" name="q6" value="D"> D) Grounded Theory</label>
+        </div>
+        <div class="explanation" id="ex6"><strong>Explanation:</strong> Ontology deals with the nature of reality (what we know), while epistemology focuses on the methods of obtaining knowledge (how we know).</div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question-card" id="q7-card">
+        <p class="question-text">7. A researcher believes reality is objective, measurable, and independent of the observer. Which philosophy are they adhering to?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q7" value="A"> A) Interpretivism</label>
+            <label class="option-item"><input type="radio" name="q7" value="B"> B) Pragmatism</label>
+            <label class="option-item"><input type="radio" name="q7" value="C"> C) Critical Realism</label>
+            <label class="option-item"><input type="radio" name="q7" value="D"> D) Positivism</label>
+        </div>
+        <div class="explanation" id="ex7"><strong>Explanation:</strong> Positivism is rooted in objective observation, statistical hypothesis testing, and empirical evidence completely detached from personal opinions.</div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question-card" id="q8-card">
+        <p class="question-text">8. Which philosophy holds that reality is subjective and socially constructed, requiring the researcher to look at thoughts, ideas, and socio-cultural backdrops?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q8" value="A"> A) Positivism</label>
+            <label class="option-item"><input type="radio" name="q8" value="B"> B) Interpretivism</label>
+            <label class="option-item"><input type="radio" name="q8" value="C"> C) Binary Logic</label>
+            <label class="option-item"><input type="radio" name="q8" value="D"> D) Operationalization</label>
+        </div>
+        <div class="explanation" id="ex8"><strong>Explanation:</strong> Interpretivism values subjective experiences and views reality as constructed by individuals through social interactions, acting as the opposite extreme of Positivism.</div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question-card" id="q9-card">
+        <p class="question-text">9. What is the core defining trait of a "Pragmatism" philosophy?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q9" value="A"> A) Strict rejection of any qualitative data or interview processing.</label>
+            <label class="option-item"><input type="radio" name="q9" value="B"> B) Focusing on practical outcomes by using whichever combined tools best address the question.</label>
+            <label class="option-item"><input type="radio" name="q9" value="C"> C) Relying entirely on historical archival manuscripts.</label>
+            <label class="option-item"><input type="radio" name="q9" value="D"> D) Keeping the researcher completely invisible and un-involved in data conclusions.</label>
+        </div>
+        <div class="explanation" id="ex9"><strong>Explanation:</strong> Pragmatism values utility; instead of committing exclusively to one rigid philosophy, it highlights using the best tools to practically solve the core problem.</div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question-card" id="q10-card">
+        <p class="question-text">10. A project starts directly with an existing theory and builds or tests it through empirical research. What research approach is this?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q10" value="A"> A) Inductive approach</label>
+            <label class="option-item"><input type="radio" name="q10" value="B"> B) Deductive approach</label>
+            <label class="option-item"><input type="radio" name="q10" value="C"> C) Mono-method approach</label>
+            <label class="option-item"><input type="radio" name="q10" value="D"> D) Longitudinal approach</label>
+        </div>
+        <div class="explanation" id="ex10"><strong>Explanation:</strong> Deductive reasoning begins with a foundational theory and works downward to test it, whereas inductive reasoning generates new theories upwards from raw observations.</div>
+    </div>
+
+    <!-- Question 11 -->
+    <div class="question-card" id="q11-card">
+        <p class="question-text">11. Quantitative research most commonly maps to a deductive approach, while qualitative research typically reflects which approach?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q11" value="A"> A) Experimental approach</label>
+            <label class="option-item"><input type="radio" name="q11" value="B"> B) Deductive approach</label>
+            <label class="option-item"><input type="radio" name="q11" value="C"> C) Inductive approach</label>
+            <label class="option-item"><input type="radio" name="q11" value="D"> D) Operational approach</label>
+        </div>
+        <div class="explanation" id="ex11"><strong>Explanation:</strong> Inductive approaches are usually paired with qualitative research to observe themes and build up new theories from non-numerical textual/visual elements.</div>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="question-card" id="q12-card">
+        <p class="question-text">12. Which research strategy relies heavily on "manipulating the independent variable to observe changes in the dependent variable"?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q12" value="A"> A) Archival research</label>
+            <label class="option-item"><input type="radio" name="q12" value="B"> B) Grounded theory</label>
+            <label class="option-item"><input type="radio" name="q12" value="C"> C) Ethnography</label>
+            <label class="option-item"><input type="radio" name="q12" value="D"> D) Experimental research</label>
+        </div>
+        <div class="explanation" id="ex12"><strong>Explanation:</strong> Experimental research explicitly measures causal relationships by actively altering independent variables under controlled baselines.</div>
+    </div>
+
+    <!-- Question 13 -->
+    <div class="question-card" id="q13-card">
+        <p class="question-text">13. What strategy is best described by the phrase: "letting the data speak for itself" to inform the development of a brand new model?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q13" value="A"> A) Grounded theory</label>
+            <label class="option-item"><input type="radio" name="q13" value="B"> B) Action research</label>
+            <label class="option-item"><input type="radio" name="q13" value="C"> C) Case study</label>
+            <label class="option-item"><input type="radio" name="q13" value="D"> D) Archival review</label>
+        </div>
+        <div class="explanation" id="ex13"><strong>Explanation:</strong> Grounded theory lets current collected data uncover its own patterns naturally, leading directly into inductive model formulation.</div>
+    </div>
+
+    <!-- Question 14 -->
+    <div class="question-card" id="q14-card">
+        <p class="question-text">14. If a researcher studies a single subject intensely within its real-world context to gain an in-depth understanding, what strategy is being deployed?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q14" value="A"> A) Ethnography</label>
+            <label class="option-item"><input type="radio" name="q14" value="B"> B) Case study</label>
+            <label class="option-item"><input type="radio" name="q14" value="C"> C) Mixed choices</label>
+            <label class="option-item"><input type="radio" name="q14" value="D"> D) Action framework</label>
+        </div>
+        <div class="explanation" id="ex14"><strong>Explanation:</strong> A case study focuses on detailed evaluation of a singular target subject deeply situated within real constraints.</div>
+    </div>
+
+    <!-- Question 15 -->
+    <div class="question-card" id="q15-card">
+        <p class="question-text">15. In Saunders' onion, what is the core operational distinction between a "Cross-sectional" and a "Longitudinal" time horizon?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q15" value="A"> A) Cross-sectional uses data algorithms, while longitudinal uses text records.</label>
+            <label class="option-item"><input type="radio" name="q15" value="B"> B) Cross-sectional views a snapshot at a single point in time, while longitudinal collects data across multiple points in time.</label>
+            <label class="option-item"><input type="radio" name="q15" value="C"> C) Longitudinal requires animal testing targets, while cross-sectional only permits human participants.</label>
+            <label class="option-item"><input type="radio" name="q15" value="D"> D) Cross-sectional is used for patents, whereas longitudinal targets open publishing.</label>
+        </div>
+        <div class="explanation" id="ex15"><strong>Explanation:</strong> Time horizon tracks data timeline limits: cross-sectional captures a distinct temporary moment; longitudinal looks at patterns unfolding over extended periods.</div>
+    </div>
+
+    <!-- Question 16 -->
+    <div class="question-card" id="q16-card">
+        <p class="question-text">16. Under Data Science-specific concerns, which ethical parameter asks: "Are the algorithms biased?"</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q16" value="A"> A) Privacy</label>
+            <label class="option-item"><input type="radio" name="q16" value="B"> B) Informed Consent</label>
+            <label class="option-item"><input type="radio" name="q16" value="C"> C) Fairness</label>
+            <label class="option-item"><input type="radio" name="q16" value="D"> D) Transparency</label>
+        </div>
+        <div class="explanation" id="ex16"><strong>Explanation:</strong> Fairness checks for system algorithms skewing or demonstrating bias; Transparency determines if decision models can be reasonably explained.</div>
+    </div>
+
+    <!-- Question 17 -->
+    <div class="question-card" id="q17-card">
+        <p class="question-text">17. Which fundamental research ethical principle demands avoiding careless errors, negligence, and keeping careful records of activities?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q17" value="A"> A) Carefulness</label>
+            <label class="option-item"><input type="radio" name="q17" value="B"> B) Legality</label>
+            <label class="option-item"><input type="radio" name="q17" value="C"> C) Social Responsibility</label>
+            <label class="option-item"><input type="radio" name="q17" value="D"> D) Non-Discrimination</label>
+        </div>
+        <div class="explanation" id="ex17"><strong>Explanation:</strong> Carefulness focuses directly on eliminating negligence, critically vetting your peers' work, and maintaining meticulous administrative logs.</div>
+    </div>
+
+    <!-- Question 18 -->
+    <div class="question-card" id="q18-card">
+        <p class="question-text">18. What form of severe research misconduct involves "making up data or results and recording or reporting them"?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q18" value="A"> A) Plagiarism</label>
+            <label class="option-item"><input type="radio" name="q18" value="B"> B) Falsification</label>
+            <label class="option-item"><input type="radio" name="q18" value="C"> C) Fabrication</label>
+            <label class="option-item"><input type="radio" name="q18" value="D"> D) Honest Error</label>
+        </div>
+        <div class="explanation" id="ex18"><strong>Explanation:</strong> Fabrication is defined strictly as inventing or creating entirely fake data structures out of thin air.</div>
+    </div>
+
+    <!-- Question 19 -->
+    <div class="question-card" id="q19-card">
+        <p class="question-text">19. If a researcher alters instrumentation settings, changes records, or omits true results so that the research is inaccurately represented, they committed:</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q19" value="A"> A) Falsification</label>
+            <label class="option-item"><input type="radio" name="q19" value="B"> B) Fabrication</label>
+            <label class="option-item"><input type="radio" name="q19" value="C"> C) Plagiarism</label>
+            <label class="option-item"><input type="radio" name="q19" value="D"> D) Legitimate Optimization</label>
+        </div>
+        <div class="explanation" id="ex19"><strong>Explanation:</strong> Falsification involves manipulating physical material setups or omitting/distorting data points to engineer a false impression.</div>
+    </div>
+
+    <!-- Question 20 -->
+    <div class="question-card" id="q20-card">
+        <p class="question-text">20. According to the guidelines, which item is explicitly excluded from the legal definition of "Research Misconduct"?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q20" value="A"> A) Intentionally stealing text blocks without giving author credit.</label>
+            <label class="option-item"><input type="radio" name="q20" value="B"> B) Honest error or differences of scientific opinion.</label>
+            <label class="option-item"><input type="radio" name="q20" value="C"> C) Deleting outlier raw data samples to fix statistics manually.</label>
+            <label class="option-item"><input type="radio" name="q20" value="D"> D) Reporting completely un-run prototype experiments.</label>
+        </div>
+        <div class="explanation" id="ex20"><strong>Explanation:</strong> The Office of Research Integrity specifies that research misconduct does not include honest error or genuine differences of opinion among experts.</div>
+    </div>
+
+</div>
+
+<script>
+    // Configuration dictionary detailing correct solutions matching answer choices
+    const solutions = {
+        q1: 'B', q2: 'B', q3: 'B', q4: 'C', q5: 'C',
+        q6: 'B', q7: 'D', q8: 'B', q9: 'B', q10: 'B',
+        q11: 'C', q12: 'D', q13: 'A', q14: 'B', q15: 'B',
+        q16: 'C', q17: 'A', q18: 'C', q19: 'A', q20: 'B'
+    };
+
+    let points = {};
+    const summaryDisplay = document.getElementById('scoreSummary');
+
+    function updateScoreSummary() {
+        const totalIdentified = Object.keys(points).length;
+        const totalCorrectAnswers = Object.values(points).reduce((acc, curr) => acc + curr, 0);
+        summaryDisplay.textContent = `Score: ${totalCorrectAnswers} / 20 correct (${totalIdentified} attempted)`;
+    }
+
+    // Attach immediate interactive evaluation events to all radio items
+    document.querySelectorAll('.option-item input[type="radio"]').forEach(element => {
+        element.addEventListener('change', function() {
+            const currentQuestionId = this.name; 
+            const chosenOptionValue = this.value;
+            const validSolutionValue = solutions[currentQuestionId];
+            
+            const parentBlock = document.getElementById(currentQuestionId + '-card');
+            const sisterLabels = parentBlock.querySelectorAll('.option-item');
+            const targetExplanation = document.getElementById('ex' + currentQuestionId.slice(1));
+
+            // Reset design attributes across current sibling choices
+            sisterLabels.forEach(lbl => {
+                lbl.classList.remove('correct', 'incorrect');
+            });
+
+            // Evaluate chosen condition accuracy
+            if (chosenOptionValue === validSolutionValue) {
+                this.parentElement.classList.add('correct');
+                points[currentQuestionId] = 1;
+            } else {
+                this.parentElement.classList.add('incorrect');
+                points[currentQuestionId] = 0;
+
+                // Emphasize correct layout value instantly for study clarity
+                sisterLabels.forEach(lbl => {
+                    if (lbl.querySelector('input').value === validSolutionValue) {
+                        lbl.classList.add('correct');
+                    }
+                });
+            }
+
+            // Expose the hidden rationale metadata block
+            targetExplanation.style.display = 'block';
+            updateScoreSummary();
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Problems, Questions & Objectives Quiz</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --primary-color: #0f766e; /* Deep Teal/Turquoise theme for Problems & Objectives */
+            --primary-hover: #115e59;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --correct-color: #10b981;
+            --incorrect-color: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .quiz-container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .badge {
+            background-color: #f0fdfa;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 10px 0 5px 0;
+            font-weight: 800;
+        }
+
+        .description {
+            color: #475569;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .score-summary {
+            background-color: #f1f5f9;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .option-item:hover {
+            background-color: #f8fafc;
+            border-color: #cbd5e1;
+        }
+
+        .option-item input[type="radio"] {
+            margin-right: 12px;
+            transform: scale(1.1);
+        }
+
+        /* Live Feedback Styling States */
+        .option-item.correct {
+            background-color: #ecfdf5 !important;
+            border-color: var(--correct-color) !important;
+            color: #065f46;
+            font-weight: 500;
+        }
+
+        .option-item.incorrect {
+            background-color: #fef2f2 !important;
+            border-color: var(--incorrect-color) !important;
+            color: #991b1b;
+        }
+
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 12px 15px;
+            background-color: #f8fafc;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 4px 4px 0;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <header>
+        <span class="badge">STQP6014: Exam Practice</span>
+        <h1>Research Problems, Questions & Objectives</h1>
+        <p class="description">30 questions comprehensively covering problem framing, question typology, and SMART objectives.</p>
+    </header>
+
+    <div class="score-summary" id="scoreSummary">
+        Score: 0 / 30 answered correctly
+    </div>
+
+    <!-- Section 1: Research Problems -->
+    <div class="question-card" id="q1-card">
+        <p class="question-text">1. Which of the following best defines a "research problem" based on the lecture guidelines?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q1" value="A"> A) A step-by-step mathematical script written to process database logs.</label>
+            <label class="option-item"><input type="radio" name="q1" value="B"> B) A specific issue, difficulty, gap in knowledge, or challenge that a researcher intends to address in a study.</label>
+            <label class="option-item"><input type="radio" name="q1" value="C"> C) The ultimate software prototype produced at the end of a project development lifecycle.</label>
+            <label class="option-item"><input type="radio" name="q1" value="D"> D) A financial commercialization barrier identified during mass market deployment.</label>
+        </div>
+        <div class="explanation" id="ex1"><strong>Explanation:</strong> According to the slides, a research problem is a specific issue, difficulty, gap in knowledge, or challenge intended to be addressed, setting the foundation for the entire study[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q2-card">
+        <p class="question-text">2. What role does the research problem play within the broader scope of a research methodology?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q2" value="A"> A) It functions exclusively as the secondary appendix item.</label>
+            <label class="option-item"><input type="radio" name="q2" value="B"> B) It provides the commercial pricing model metrics.</label>
+            <label class="option-item"><input type="radio" name="q2" value="C"> C) It sets the foundation for the entire research process.</label>
+            <label class="option-item"><input type="radio" name="q2" value="D"> D) It acts as the legal patent filing template for ownership rights.</label>
+        </div>
+        <div class="explanation" id="ex2"><strong>Explanation:</strong> The research problem is the fundamental baseline because it sets the foundation for the entire research process[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q3-card">
+        <p class="question-text">3. Which of the following is NOT an explicitly listed characteristic of a valid research problem?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q3" value="A"> A) Clear and unambiguous</label>
+            <label class="option-item"><input type="radio" name="q3" value="B"> B) Guaranteed to generate profit or commercial venture capital</label>
+            <label class="option-item"><input type="radio" name="q3" value="C"> C) Significant in terms of contribution to the field</label>
+            <label class="option-item"><input type="radio" name="q3" value="D"> D) Feasible within time, resources, and scope</label>
+        </div>
+        <div class="explanation" id="ex3"><strong>Explanation:</strong> The notes outline four specific characteristics: 1. Clear and unambiguous, 2. Researchable using available methods/data, 3. Significant, and 4. Feasible[cite: 3]. Generating profit is not a baseline requirement[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q4-card">
+        <p class="question-text">4. If a problem cannot be addressed because the required data cannot legally or physically be gathered, which core characteristic is it directly violating?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q4" value="A"> A) Ambiguity status</label>
+            <label class="option-item"><input type="radio" name="q4" value="B"> B) Literature review density</label>
+            <label class="option-item"><input type="radio" name="q4" value="C"> C) Researchable using available methods and data</label>
+            <label class="option-item"><input type="radio" name="q4" value="D"> D) Commercial mass-production alignment</label>
+        </div>
+        <div class="explanation" id="ex4"><strong>Explanation:</strong> A valid research problem must be "researchable using available methods and data" to allow empirical investigation to take place[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q5-card">
+        <p class="question-text">5. The phrase "There is a lack of understanding of how misinformation spreads on social media platforms among different age groups" is used in the text as an example of what?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q5" value="A"> A) A descriptive research question</label>
+            <label class="option-item"><input type="radio" name="q5" value="B"> B) A research objective action plan</label>
+            <label class="option-item"><input type="radio" name="q5" value="C"> C) A research problem example</label>
+            <label class="option-item"><input type="radio" name="q5" value="D"> D) A theoretical framework definition</label>
+        </div>
+        <div class="explanation" id="ex5"><strong>Explanation:</strong> This specific phrase is explicitly highlighted in the lecture slides as an illustrative example of a Research Problem statement[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q6-card">
+        <p class="question-text">6. What are the four core sources of a research problem outlined in the slide diagrams?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q6" value="A"> A) Journals, Books, News websites, Social Media trends</label>
+            <label class="option-item"><input type="radio" name="q6" value="B"> B) Real-world issues, Literature review/gaps, Theoretical frameworks, Personal/professional experience</label>
+            <label class="option-item"><input type="radio" name="q6" value="C"> C) Government funding, Patent registries, Venture capitals, Lab prototypes</label>
+            <label class="option-item"><input type="radio" name="q6" value="D"> D) Gantt charts, K-charts, Action items, Code libraries</label>
+        </div>
+        <div class="explanation" id="ex6"><strong>Explanation:</strong> The slide identifies the 4 main sources of a research problem as: Real-world issues, Literature review gaps, Theoretical frameworks, and Personal or professional experience[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q7-card">
+        <p class="question-text">7. When a research problem stems directly from an operational workflow challenge in a data analyst's day job, which problem source category does this fall under?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q7" value="A"> A) Literature review gaps</label>
+            <label class="option-item"><input type="radio" name="q7" value="B"> B) Personal or professional experience</label>
+            <label class="option-item"><input type="radio" name="q7" value="C"> C) Patent ownership demands</label>
+            <label class="option-item"><input type="radio" name="q7" value="D"> D) Abstract metadata indexes</label>
+        </div>
+        <div class="explanation" id="ex7"><strong>Explanation:</strong> Challenges encountered within one's occupation match the "Personal or professional experience" source category[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q8-card">
+        <p class="question-text">8. Which of the following charts the correct sequential steps involved in *defining* a research problem?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q8" value="A"> A) Narrow scope -> Write script -> Run experiment -> Patent creation</label>
+            <label class="option-item"><input type="radio" name="q8" value="B"> B) Draft question -> Propose budget -> Gather team -> Mass produce</label>
+            <label class="option-item"><input type="radio" name="q8" value="C"> C) Review current state of knowledge -> Identify gaps/inconsistencies -> Justify significance -> Narrow the scope</label>
+            <label class="option-item"><input type="radio" name="q8" value="D"> D) Formulate objectives -> Execute simulation -> Code optimization -> Review literature</label>
+        </div>
+        <div class="explanation" id="ex8"><strong>Explanation:</strong> The slides list the four sequential actions for defining a research problem exactly as: Review state of knowledge, Identify gaps/inconsistencies, Justify significance, and Narrow the scope[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q9-card">
+        <p class="question-text">9. Why is it vital to "narrow the scope" during the problem definition phase?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q9" value="A"> A) To ensure the study remains feasible and realistic to execute within resource constraints.</label>
+            <label class="option-item"><input type="radio" name="q9" value="B"> B) To hide conflicting study conclusions from peer reviewers.</label>
+            <label class="option-item"><input type="radio" name="q9" value="C"> C) To eliminate the necessity of doing a formal literature review.</label>
+            <label class="option-item"><input type="radio" name="q9" value="D"> D) To switch a project format from quantitative to qualitative mono-method instantly.</label>
+        </div>
+        <div class="explanation" id="ex9"><strong>Explanation:</strong> Narrowing the scope transforms a broad topic into a specific, researchable problem that can realistically be achieved with available resources[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q10-card">
+        <p class="question-text">10. In the "Exercise RP" worksheet blueprint, what element bridges the space between identifying an 'Observed Issue' and formulating a 'Preliminary Problem Statement'?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q10" value="A"> A) Software Prototype and Mass Production</label>
+            <label class="option-item"><input type="radio" name="q10" value="B"> B) Why it Matters and What is Missing</label>
+            <label class="option-item"><input type="radio" name="q10" value="C"> C) Budgetary Deficit and Revenue Analysis</label>
+            <label class="option-item"><input type="radio" name="q10" value="D"> D) Gantt Chart Timeline adjustments</label>
+        </div>
+        <div class="explanation" id="ex10"><strong>Explanation:</strong> The Framing Worksheet structure flows from: Topic Area -> Observed Issue -> Why it Matters -> What is Missing -> Preliminary Problem Statement[cite: 3].</div>
+    </div>
+
+    <!-- Section 2: Research Questions -->
+    <div class="question-card" id="q11-card">
+        <p class="question-text">11. What is the fundamental definition of a "research question"?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q11" value="A"> A) A vague conversational hook used during project pitches.</label>
+            <label class="option-item"><input type="radio" name="q11" value="B"> B) A clear, focused, concise, and arguable question around which you center your research.</label>
+            <label class="option-item"><input type="radio" name="q11" value="C"> C) Any technical problem string encountered while debugging code templates.</label>
+            <label class="option-item"><input type="radio" name="q11" value="D"> D) An administrative query submitted to institutional ethics board managers.</label>
+        </div>
+        <div class="explanation" id="ex11"><strong>Explanation:</strong> A research question is defined as a clear, focused, concise, and arguable question around which you center your research, guiding inquiry, data collection, and analysis[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q12-card">
+        <p class="question-text">12. Which of the following is NOT a defined characteristic of a good research question?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q12" value="A"> A) Broad, open-ended, and universally un-arguable</label>
+            <label class="option-item"><input type="radio" name="q12" value="B"> B) Focused and specific</label>
+            <label class="option-item"><input type="radio" name="q12" value="C"> C) Empirically investigable</label>
+            <label class="option-item"><input type="radio" name="q12" value="D"> D) Feasible and ethical</label>
+        </div>
+        <div class="explanation" id="ex12"><strong>Explanation:</strong> Good research questions must be specific, investigable, relevant, significant, feasible, and ethical—not overly broad or un-arguable[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q13-card">
+        <p class="question-text">13. If a question deals with purely supernatural phenomena that cannot be observed, measured, or evaluated with data, it fails which metric?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q13" value="A"> A) Ethical status</label>
+            <label class="option-item"><input type="radio" name="q13" value="B"> B) Relevant orientation</label>
+            <label class="option-item"><input type="radio" name="q13" value="C"> C) Empirically investigable</label>
+            <label class="option-item"><input type="radio" name="q13" value="D"> D) Concise formulation</label>
+        </div>
+        <div class="explanation" id="ex13"><strong>Explanation:</strong> To be "empirically investigable", a research question must be answerable through real-world observation, measurement, and data analysis[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q14-card">
+        <p class="question-text">14. What are the four specific types of research questions presented in the lecture typology?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q14" value="A"> A) Primary, Secondary, Tertiary, Quaternary</label>
+            <label class="option-item"><input type="radio" name="q14" value="B"> B) Inductive, Deductive, Pragmatic, Ontological</label>
+            <label class="option-item"><input type="radio" name="q14" value="C"> C) Descriptive, Comparative, Relational, Causal</label>
+            <label class="option-item"><input type="radio" name="q14" value="D"> D) Theoretical, Algorithmic, Experimental, Archival</label>
+        </div>
+        <div class="explanation" id="ex14"><strong>Explanation:</strong> The slide identifies four types: Descriptive ("What is happening?"), Comparative (group comparisons), Relational (variable relationships), and Causal (effects of variables)[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q15-card">
+        <p class="question-text">15. A research question that asks "What is happening?" falls into which category?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q15" value="A"> A) Comparative</label>
+            <label class="option-item"><input type="radio" name="q15" value="B"> B) Causal</label>
+            <label class="option-item"><input type="radio" name="q15" value="C"> C) Relational</label>
+            <label class="option-item"><input type="radio" name="q15" value="D"> D) Descriptive</label>
+        </div>
+        <div class="explanation" id="ex15"><strong>Explanation:</strong> Descriptive research questions aim specifically to uncover and map out "What is happening?" in a given setting[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q16-card">
+        <p class="question-text">16. A question framed as "How do two or more groups compare?" belongs to which category?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q16" value="A"> A) Descriptive</label>
+            <label class="option-item"><input type="radio" name="q16" value="B"> B) Comparative</label>
+            <label class="option-item"><input type="radio" name="q16" value="C"> C) Relational</label>
+            <label class="option-item"><input type="radio" name="q16" value="D"> D) Causal</label>
+        </div>
+        <div class="explanation" id="ex16"><strong>Explanation:</strong> Comparative questions look at similarities and differences across multiple distinct groups[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q17-card">
+        <p class="question-text">17. Which question type targets "What is the relationship between variables?" without explicitly declaring one to be a direct mandatory cause of the other?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q17" value="A"> A) Relational</label>
+            <label class="option-item"><input type="radio" name="q17" value="B"> B) Descriptive</label>
+            <label class="option-item"><input type="radio" name="q17" value="C"> C) Causal</label>
+            <label class="option-item"><input type="radio" name="q17" value="D"> D) Comparative</label>
+        </div>
+        <div class="explanation" id="ex17"><strong>Explanation:</strong> Relational questions explicitly explore trends, patterns, or associations between variables[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q18-card">
+        <p class="question-text">18. A question seeking to determine "What is the effect of one variable on another?" is classified as:</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q18" value="A"> A) Descriptive</label>
+            <label class="option-item"><input type="radio" name="q18" value="B"> B) Relational</label>
+            <label class="option-item"><input type="radio" name="q18" value="C"> C) Comparative</label>
+            <label class="option-item"><input type="radio" name="q18" value="D"> D) Causal</label>
+        </div>
+        <div class="explanation" id="ex18"><strong>Explanation:</strong> Causal questions look for a cause-and-effect link where changes in one variable result in changes in another[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q19-card">
+        <p class="question-text">19. The example question: "How do different machine learning algorithms perform in predicting customer churn?" is a practical example of which type of question?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q19" value="A"> A) Descriptive question</label>
+            <label class="option-item"><input type="radio" name="q19" value="B"> B) Comparative question</label>
+            <label class="option-item"><input type="radio" name="q19" value="C"> C) Grounded baseline question</label>
+            <label class="option-item"><input type="radio" name="q19" value="D"> D) Purely ethical theoretical question</label>
+        </div>
+        <div class="explanation" id="ex19"><strong>Explanation:</strong> Because it contrasts the performance metrics across *different* machine learning models, it functions as a comparative inquiry[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q20-card">
+        <p class="question-text">20. "What are the key motivations for data professionals to adopt ethical AI practices?" is listed in the slides to demonstrate:</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q20" value="A"> A) A highly effective research objective action plan.</label>
+            <label class="option-item"><input type="radio" name="q20" value="B"> B) A valid research question example.</label>
+            <label class="option-item"><input type="radio" name="q20" value="C"> C) A preliminary problem statement worksheet entry.</label>
+            <label class="option-item"><input type="radio" name="q20" value="D"> D) A structured algorithmic simulation result.</label>
+        </div>
+        <div class="explanation" id="ex20"><strong>Explanation:</strong> This is explicitly presented as a clear, focused, and significant Research Question example[cite: 3].</div>
+    </div>
+
+    <!-- Section 3: Research Objectives -->
+    <div class="question-card" id="q21-card">
+        <p class="question-text">21. What is the fundamental definition of a "research objective"?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q21" value="A"> A) The comprehensive bibliography section of a thesis document.</label>
+            <label class="option-item"><input type="radio" name="q21" value="B"> B) Clear, specific goals that the researcher intends to achieve in order to answer the research question.</label>
+            <label class="option-item"><input type="radio" name="q21" value="C"> C) The personal career goals an academic aims to hit post-graduation.</label>
+            <label class="option-item"><input type="radio" name="q21" value="D"> D) The commercial monetization milestones required by enterprise stakeholders.</label>
+        </div>
+        <div class="explanation" id="ex21"><strong>Explanation:</strong> Research objectives are the clear, specific goals a researcher intends to achieve to answer their research question[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q22-card">
+        <p class="question-text">22. Which acronym defines the core characteristics of good research objectives?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q22" value="A"> A) GANTT</label>
+            <label class="option-item"><input type="radio" name="q22" value="B"> B) SAUNDERS</label>
+            <label class="option-item"><input type="radio" name="q22" value="C"> C) SMART</label>
+            <label class="option-item"><input type="radio" name="q22" value="D"> D) POSITIVISM</label>
+        </div>
+        <div class="explanation" id="ex22"><strong>Explanation:</strong> The notes state that good research objectives must follow the SMART acronym[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q23-card">
+        <p class="question-text">23. In the SMART acronym framework for research objectives, what do the 'M' and 'T' represent?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q23" value="A"> A) Methodological, Theoretical</label>
+            <label class="option-item"><input type="radio" name="q23" value="B"> B) Model-driven, Technological</label>
+            <label class="option-item"><input type="radio" name="q23" value="C"> C) Measurable, Time-bound</label>
+            <label class="option-item"><input type="radio" name="q23" value="D"> D) Management-approved, Team-oriented</label>
+        </div>
+        <div class="explanation" id="ex23"><strong>Explanation:</strong> SMART stands for Specific, Measurable, Achievable, Relevant, and Time-bound[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q24-card">
+        <p class="question-text">24. Beyond being SMART, what critical design rule must all research objectives satisfy?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q24" value="A"> A) They must use at least three programming environments.</label>
+            <label class="option-item"><input type="radio" name="q24" value="B"> B) They must be aligned with the research question and problem.</label>
+            <label class="option-item"><input type="radio" name="q24" value="C"> C) They must avoid utilizing external literature databases.</label>
+            <label class="option-item"><input type="radio" name="q24" value="D"> D) They must focus entirely on commercializing prototypes.</label>
+        </div>
+        <div class="explanation" id="ex24"><strong>Explanation:</strong> Alignment is key; objectives must be directly aligned with the research question and problem to maintain internal validity[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q25-card">
+        <p class="question-text">25. Given the research question: "How does algorithm transparency affect user trust in AI systems?", which of the following is a correct aligned research objective listed in the text?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q25" value="A"> A) To build a commercial app and launch it on mobile stores.</label>
+            <label class="option-item"><input type="radio" name="q25" value="B"> B) To maximize the financial return on software development.</label>
+            <label class="option-item"><input type="radio" name="q25" value="C"> C) To evaluate the relationship between transparency and trust.</label>
+            <label class="option-item"><input type="radio" name="q25" value="D"> D) To eliminate the need for future data collection pipelines.</label>
+        </div>
+        <div class="explanation" id="ex25"><strong>Explanation:</strong> One of the three explicit example objectives listed in the text for this question is: "To evaluate the relationship between transparency and trust"[cite: 3].</div>
+    </div>
+
+    <!-- Section 4: Process Sequence -->
+    <div class="question-card" id="q26-card">
+        <p class="question-text">26. In actual practical research design execution, what is the standard, logical sequence of workflow development?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q26" value="A"> A) Objectives -> Questions -> Problem</label>
+            <label class="option-item"><input type="radio" name="q26" value="B"> B) Questions -> Objectives -> Problem</label>
+            <label class="option-item"><input type="radio" name="q26" value="C"> C) Problem -> Questions -> Objectives</label>
+            <label class="option-item"><input type="radio" name="q26" value="D"> D) Objectives -> Problem -> Questions</label>
+        </div>
+        <div class="explanation" id="ex26"><strong>Explanation:</strong> The notes outline the standard sequence as: 1. Research Problem, 2. Research Questions, 3. Research Objectives[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q27-card">
+        <p class="question-text">27. Why does the Research Problem always serve as the initial step or "anchor" of this sequence?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q27" value="A"> A) It provides the final statistical solution data matrix.</label>
+            <label class="option-item"><input type="radio" name="q27" value="B"> B) It identifies what's wrong, what's missing, or what needs to be explored, setting the context and rationale.</label>
+            <label class="option-item"><input type="radio" name="q27" value="C"> C) It acts as the legal contract binding project funding.</label>
+            <label class="option-item"><input type="radio" name="q27" value="D"> D) It is the easiest component to change at the end of the semester.</label>
+        </div>
+        <div class="explanation" id="ex27"><strong>Explanation:</strong> The problem is the anchor because it establishes the core context and rationale by highlighting what is wrong or missing[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q28-card">
+        <p class="question-text">28. What best describes the functional role of Research Questions within the standard process sequence?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q28" value="A"> A) They are the "action plan" that details administrative deadlines.</label>
+            <label class="option-item"><input type="radio" name="q28" value="B"> B) They are the final published manuscripts sent to editors.</label>
+            <label class="option-item"><input type="radio" name="q28" value="C"> C) They are the "inquiry tools" that ask what needs to be found out to address the problem.</label>
+            <label class="option-item"><input type="radio" name="q28" value="D"> D) They are empirical variables subjected to database operations.</label>
+        </div>
+        <div class="explanation" id="ex28"><strong>Explanation:</strong> Questions act as the inquiry tools. Once the anchor problem is understood, you ask questions to determine what needs to be found out[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q29-card">
+        <p class="question-text">29. What functional role do Research Objectives play once the research questions have been established?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q29" value="A"> A) They serve as the original problem anchor.</label>
+            <label class="option-item"><input type="radio" name="q29" value="B"> B) They are the "action plan" clarifying what you will do to answer the questions (e.g., measure, analyze, compare).</label>
+            <label class="option-item"><input type="radio" name="q29" value="C"> C) They represent subjective opinions about social issues.</label>
+            <label class="option-item"><input type="radio" name="q29" value="D"> D) They substitute for a full experimental methodology layout.</label>
+        </div>
+        <div class="explanation" id="ex29"><strong>Explanation:</strong> Objectives are the actionable steps (measure, analyze, compare, model) that form your concrete action plan to resolve the questions[cite: 3].</div>
+    </div>
+
+    <div class="question-card" id="q30-card">
+        <p class="question-text">30. Failure to properly align your Research Objectives to your Research Questions will directly result in:</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q30" value="A"> A) Automated compilation syntax errors within HTML quiz engines.</label>
+            <label class="option-item"><input type="radio" name="q30" value="B"> B) Exceeding the project's allocated financial budget.</label>
+            <label class="option-item"><input type="radio" name="q30" value="C"> C) Conducting tasks that do not actually answer your primary inquiry, breaking study cohesion.</label>
+            <label class="option-item"><input type="radio" name="q30" value="D"> D) Shifting the study from cross-sectional to longitudinal time horizons automatically.</label>
+        </div>
+        <div class="explanation" id="ex30"><strong>Explanation:</strong> Because objectives are your action plan to answer your questions, a lack of alignment means your actions will fail to resolve the core inquiry[cite: 3].</div>
+    </div>
+
+</div>
+
+<script>
+    // Configuration dictionary detailing correct solutions matching answer choices
+    const solutions = {
+        q1: 'B', q2: 'C', q3: 'B', q4: 'C', q5: 'C',
+        q6: 'B', q7: 'B', q8: 'C', q9: 'A', q10: 'B',
+        q11: 'B', q12: 'A', q13: 'C', q14: 'C', q15: 'D',
+        q16: 'B', q17: 'A', q18: 'D', q19: 'B', q20: 'B',
+        q21: 'B', q22: 'C', q23: 'C', q24: 'B', q25: 'C',
+        q26: 'C', q27: 'B', q28: 'C', q29: 'B', q30: 'C'
+    };
+
+    let points = {};
+    const summaryDisplay = document.getElementById('scoreSummary');
+
+    function updateScoreSummary() {
+        const totalIdentified = Object.keys(points).length;
+        const totalCorrectAnswers = Object.values(points).reduce((acc, curr) => acc + curr, 0);
+        summaryDisplay.textContent = `Score: ${totalCorrectAnswers} / 30 correct (${totalIdentified} attempted)`;
+    }
+
+    // Attach immediate interactive evaluation events to all radio items
+    document.querySelectorAll('.option-item input[type="radio"]').forEach(element => {
+        element.addEventListener('change', function() {
+            const currentQuestionId = this.name; 
+            const chosenOptionValue = this.value;
+            const validSolutionValue = solutions[currentQuestionId];
+            
+            const parentBlock = document.getElementById(currentQuestionId + '-card');
+            const sisterLabels = parentBlock.querySelectorAll('.option-item');
+            const targetExplanation = document.getElementById('ex' + currentQuestionId.slice(1));
+
+            // Reset design attributes across current sibling choices
+            sisterLabels.forEach(lbl => {
+                lbl.classList.remove('correct', 'incorrect');
+            });
+
+            // Evaluate chosen condition accuracy
+            if (chosenOptionValue === validSolutionValue) {
+                this.parentElement.classList.add('correct');
+                points[currentQuestionId] = 1;
+            } else {
+                this.parentElement.classList.add('incorrect');
+                points[currentQuestionId] = 0;
+
+                // Emphasize correct layout value instantly for study clarity
+                sisterLabels.forEach(lbl => {
+                    if (lbl.querySelector('input').value === validSolutionValue) {
+                        lbl.classList.add('correct');
+                    }
+                });
+            }
+
+            // Expose the hidden rationale metadata block
+            targetExplanation.style.display = 'block';
+            updateScoreSummary();
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAYA UKM Thesis Guidelines Comprehensive Quiz</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --text-color: #0f172a;
+            --primary-color: #990000; /* UKM Corporate Maroon theme */
+            --primary-hover: #730000;
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --correct-color: #10b981;
+            --incorrect-color: #ef4444;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .quiz-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .badge {
+            background-color: #fef2f2;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 1px solid #fee2e2;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 10px 0 5px 0;
+            font-weight: 800;
+        }
+
+        .description {
+            color: #475569;
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        .section-divider {
+            margin: 40px 0 20px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .score-summary {
+            background-color: #f1f5f9;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 25px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1rem;
+            position: sticky;
+            top: 10px;
+            z-index: 100;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 18px;
+        }
+
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+
+        .option-item:hover {
+            background-color: #f8fafc;
+            border-color: #cbd5e1;
+        }
+
+        .option-item input[type="radio"] {
+            margin-right: 12px;
+            transform: scale(1.1);
+        }
+
+        .option-item.correct {
+            background-color: #ecfdf5 !important;
+            border-color: var(--correct-color) !important;
+            color: #065f46;
+            font-weight: 500;
+        }
+
+        .option-item.incorrect {
+            background-color: #fef2f2 !important;
+            border-color: var(--incorrect-color) !important;
+            color: #991b1b;
+        }
+
+        .explanation {
+            display: none;
+            margin-top: 15px;
+            padding: 12px 15px;
+            background-color: #f8fafc;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 4px 4px 0;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+        
+        code {
+            background-color: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-container">
+    <header>
+        <span class="badge">Universiti Kebangsaan Malaysia</span>
+        <h1>GAYA UKM Style & Format Quiz</h1>
+        <p class="description">30 practice questions testing layout rules, in-text citations, and reference listing constraints.</p>
+    </header>
+
+    <div class="score-summary" id="scoreSummary">
+        Score: 0 / 30 answered correctly
+    </div>
+
+    <!-- SECTION 1 -->
+    <div class="section-divider">Part 1: Technical Specifications & Page Layout</div>
+
+    <!-- Question 1 -->
+    <div class="question-card" id="q1-card">
+        <p class="question-text">1. What is the standard font family and size required for the main body text in a GAYA UKM thesis?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q1" value="A"> A) Arial, 11 pt</label>
+            <label class="option-item"><input type="radio" name="q1" value="B"> B) Times New Roman, 12 pt</label>
+            <label class="option-item"><input type="radio" name="q1" value="C"> C) Calibri, 11 pt</label>
+            <label class="option-item"><input type="radio" name="q1" value="D"> D) Times New Roman, 11 pt</label>
+        </div>
+        <div class="explanation" id="ex1"><strong>Explanation:</strong> Main narrative body text requires Times New Roman, size 12 pt.</div>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question-card" id="q2-card">
+        <p class="question-text">2. Which of the following parameters is completely correct regarding the formatting of major chapter headings (e.g., BAB I / CHAPTER I)?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q2" value="A"> A) Bold, Sentence case, Centered, 12 pt</label>
+            <label class="option-item"><input type="radio" name="q2" value="B"> B) Regular, CAPITALS, Left-aligned, 12 pt</label>
+            <label class="option-item"><input type="radio" name="q2" value="C"> C) Bold, CAPITALS, Centered, 11 pt</label>
+            <label class="option-item"><input type="radio" name="q2" value="D"> D) Bold, CAPITALS, Centered, 12 pt</label>
+        </div>
+        <div class="explanation" id="ex2"><strong>Explanation:</strong> Under GAYA UKM, major chapter titles must be bold, written completely in uppercase (CAPITALS), centered, and reduced to 11 pt.</div>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question-card" id="q3-card">
+        <p class="question-text">3. What is the specific line spacing and alignment combination mandated for the main text body?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q3" value="A"> A) Single line spacing, Left-aligned</label>
+            <label class="option-item"><input type="radio" name="q3" value="B"> B) 1.5 line spacing, Justified</label>
+            <label class="option-item"><input type="radio" name="q3" value="C"> C) 1.5 line spacing, Left-aligned</label>
+            <label class="option-item"><input type="radio" name="q3" value="D"> D) Double line spacing, Justified</label>
+        </div>
+        <div class="explanation" id="ex3"><strong>Explanation:</strong> Text blocks must use 1.5 line spacing and be fully justified on the page.</div>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question-card" id="q4-card">
+        <p class="question-text">4. How should the first paragraph immediately below any heading or subheading be structured regarding its indentation?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q4" value="A"> A) Indented by 12.7 mm</label>
+            <label class="option-item"><input type="radio" name="q4" value="B"> B) Flush with the left margin (No indentation)</label>
+            <label class="option-item"><input type="radio" name="q4" value="C"> C) Indented by 5.0 mm</label>
+            <label class="option-item"><input type="radio" name="q4" value="D"> D) Centered formatting block</label>
+        </div>
+        <div class="explanation" id="ex4"><strong>Explanation:</strong> The absolute first paragraph after any heading starts completely flush left without any indentation.</div>
+    </div>
+
+    <!-- Question 5 -->
+    <div class="question-card" id="q5-card">
+        <p class="question-text">5. For subsequent paragraphs (excluding the first one under a heading), what is the required indentation for the first line?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q5" value="A"> A) 5.0 mm</label>
+            <label class="option-item"><input type="radio" name="q5" value="B"> B) 10.0 mm</label>
+            <label class="option-item"><input type="radio" name="q5" value="C"> C) 12.7 mm</label>
+            <label class="option-item"><input type="radio" name="q5" value="D"> D) 15.4 mm</label>
+        </div>
+        <div class="explanation" id="ex5"><strong>Explanation:</strong> Second and all subsequent consecutive paragraphs must have their first line indented by exactly 12.7 mm (0.5 inches).</div>
+    </div>
+
+    <!-- Question 6 -->
+    <div class="question-card" id="q6-card">
+        <p class="question-text">6. What is the specific top margin measurement for pages hosting a brand-new chapter heading?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q6" value="A"> A) 30 mm</label>
+            <label class="option-item"><input type="radio" name="q6" value="B"> B) 38 mm</label>
+            <label class="option-item"><input type="radio" name="q6" value="C"> C) 25 mm</label>
+            <label class="option-item"><input type="radio" name="q6" value="D"> D) 50 mm</label>
+        </div>
+        <div class="explanation" id="ex6"><strong>Explanation:</strong> Regular pages have a 30 mm top margin, but pages starting a new chapter have a deep drop margin of 50 mm from the top edge.</div>
+    </div>
+
+    <!-- Question 7 -->
+    <div class="question-card" id="q7-card">
+        <p class="question-text">7. Which page margin requires a setting of 38 mm to guarantee text safety during physical bookbinding?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q7" value="A"> A) Top margin</label>
+            <label class="option-item"><input type="radio" name="q7" value="B"> B) Right margin</label>
+            <label class="option-item"><input type="radio" name="q7" value="C"> C) Left margin</label>
+            <label class="option-item"><input type="radio" name="q7" value="D"> D) Bottom margin</label>
+        </div>
+        <div class="explanation" id="ex7"><strong>Explanation:</strong> The left margin is designated at 38 mm for binding allowance. Top is 30 mm, bottom and right are 25 mm.</div>
+    </div>
+
+    <!-- Question 8 -->
+    <div class="question-card" id="q8-card">
+        <p class="question-text">8. According to GAYA UKM rules, where must the page numbers be cleanly positioned?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q8" value="A"> A) Bottom center margin</label>
+            <label class="option-item"><input type="radio" name="q8" value="B"> B) Top right corner, 15 mm from the top edge</label>
+            <label class="option-item"><input type="radio" name="q8" value="C"> C) Top right corner, 30 mm from the top edge</label>
+            <label class="option-item"><input type="radio" name="q8" value="D"> D) Bottom right corner, 25 mm from the bottom edge</label>
+        </div>
+        <div class="explanation" id="ex8"><strong>Explanation:</strong> Page numbers reside in the top right corner, exactly 15 mm from the top edge. The last digit should sit 25 mm from the right boundary.</div>
+    </div>
+
+    <!-- Question 9 -->
+    <div class="question-card" id="q9-card">
+        <p class="question-text">9. What numbering style must be allocated to all front matter pages (e.g., Acknowledgements, Table of Contents)?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q9" value="A"> A) Upper case Roman numerals (I, II, III...)</label>
+            <label class="option-item"><input type="radio" name="q9" value="B"> B) Lower case Roman numerals (i, ii, iii...)</label>
+            <label class="option-item"><input type="radio" name="q9" value="C"> C) Arabic numerals (1, 2, 3...)</label>
+            <label class="option-item"><input type="radio" name="q9" value="D"> D) Alphabetical sequencing (A, B, C...)</label>
+        </div>
+        <div class="explanation" id="ex9"><strong>Explanation:</strong> Front matter pages use small/lowercase Roman numerals. Arabic digits begin on page 1 of Chapter 1.</div>
+    </div>
+
+    <!-- Question 10 -->
+    <div class="question-card" id="q10-card">
+        <p class="question-text">10. What is the maximum size boundary allowed for a Doctor of Philosophy (PhD) thesis at UKM?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q10" value="A"> A) 60,000 words or 250 pages</label>
+            <label class="option-item"><input type="radio" name="q10" value="B"> B) 80,000 words or 300 pages</label>
+            <label class="option-item"><input type="radio" name="q10" value="C"> C) 100,000 words or 400 pages</label>
+            <label class="option-item"><input type="radio" name="q10" value="D"> D) 120,000 words or 500 pages</label>
+        </div>
+        <div class="explanation" id="ex10"><strong>Explanation:</strong> GAYA UKM sets a firm ceiling for PhD text layout at 100,000 words or 400 pages (whichever is reached first). Master's theses are limited to 60,000 words or 250 pages.</div>
+    </div>
+
+    <!-- SECTION 2 -->
+    <div class="section-divider">Part 2: In-Text Citation Formats</div>
+
+    <!-- Question 11 -->
+    <div class="question-card" id="q11-card">
+        <p class="question-text">11. If the author's name is NOT structurally integrated into the text narrative, how must a single-author citation look inside the parenthetical brackets?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q11" value="A"> A) (Shaharir, 2010)</label>
+            <label class="option-item"><input type="radio" name="q11" value="B"> B) (Shaharir: 2010)</label>
+            <label class="option-item"><input type="radio" name="q11" value="C"> C) (Shaharir 2010)</label>
+            <label class="option-item"><input type="radio" name="q11" value="D"> [Shaharir 2010]</label>
+        </div>
+        <div class="explanation" id="ex11"><strong>Explanation:</strong> A distinctive rule of GAYA UKM is the removal of the comma between the author's name and the year within parenthetical brackets. Thus, <code>(Shaharir 2010)</code> is correct.</div>
+    </div>
+
+    <!-- Question 12 -->
+    <div class="question-card" id="q12-card">
+        <p class="question-text">12. When citing a single work co-authored by exactly two individuals inside parentheses, what punctuation/conjunction format is required?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q12" value="A"> A) (Abdul Rahman and Arsmah 2009)</label>
+            <label class="option-item"><input type="radio" name="q12" value="B"> B) (Abdul Rahman & Arsmah 2009)</label>
+            <label class="option-item"><input type="radio" name="q12" value="C"> C) (Abdul Rahman, & Arsmah 2009)</label>
+            <label class="option-item"><input type="radio" name="q12" value="D"> (Abdul Rahman; Arsmah, 2009)</label>
+        </div>
+        <div class="explanation" id="ex12"><strong>Explanation:</strong> When placed completely within brackets, an ampersand (<code>&</code>) joins two co-authors without commas. If part of the narrative text outside brackets, "and" is written.</div>
+    </div>
+
+    <!-- Question 13 -->
+    <div class="question-card" id="q13-card">
+        <p class="question-text">13. For a source written by three or more authors, how must the in-text citation be written starting from the very first mention?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q13" value="A"> A) List all names on first mention, then use et al. later.</label>
+            <label class="option-item"><input type="radio" name="q13" value="B"> B) (Siti Balkis et al. 2011)</label>
+            <label class="option-item"><input type="radio" name="q13" value="C"> C) (Siti Balkis, et. al., 2011)</label>
+            <label class="option-item"><input type="radio" name="q13" value="D"> (Siti Balkis and others, 2011)</label>
+        </div>
+        <div class="explanation" id="ex13"><strong>Explanation:</strong> For three or more authors, GAYA UKM requires using the primary author followed immediately by "et al." even on the first citation instance. Note there is no comma before or after et al.</div>
+    </div>
+
+    <!-- Question 14 -->
+    <div class="question-card" id="q14-card">
+        <p class="question-text">14. When multiple independent research papers are grouped into a single set of citation brackets, how must they be sorted and divided?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q14" value="A"> A) Sorted chronologically; separated by commas</label>
+            <label class="option-item"><input type="radio" name="q14" value="B"> B) Sorted alphabetically by author surname; separated by semicolons</label>
+            <label class="option-item"><input type="radio" name="q14" value="C"> C) Sorted by importance; separated by slashes</label>
+            <label class="option-item"><input type="radio" name="q14" value="D"> Sorted alphabetically by author surname; separated by commas</label>
+        </div>
+        <div class="explanation" id="ex14"><strong>Explanation:</strong> Multiple independent entries must follow alphabetical sorting by author's name, with each entry split using a semicolon (e.g., <code>(Abdul Samad 2011; Azahan 2011; Jamaluddin 2010)</code>).</div>
+    </div>
+
+    <!-- Question 15 -->
+    <div class="question-card" id="q15-card">
+        <p class="question-text">15. If you cite separate papers published across different years by the exact same author inside one bracket, how is it represented?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q15" value="A"> A) (Jamaluddin 2007; 2009; 2012)</label>
+            <label class="option-item"><input type="radio" name="q15" value="B"> B) (Jamaluddin 2007, 2009, 2012)</label>
+            <label class="option-item"><input type="radio" name="q15" value="C"> C) (Jamaluddin 2007 & 2009 & 2012)</label>
+            <label class="option-item"><input type="radio" name="q15" value="D"> (Jamaluddin: 2007, 2009, 2012)</label>
+        </div>
+        <div class="explanation" id="ex15"><strong>Explanation:</strong> When the author is identical, list the name once followed by the timeline sequence split cleanly by commas.</div>
+    </div>
+
+    <!-- Question 16 -->
+    <div class="question-card" id="q16-card">
+        <p class="question-text">16. If a researcher publishes two distinct documents in the same calendar year (e.g., Sham in 2010), how are they identified in text?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q16" value="A"> A) (Sham 2010-1) and (Sham 2010-2)</label>
+            <label class="option-item"><input type="radio" name="q16" value="B"> B) (Sham 2010a) and (Sham 2010b)</label>
+            <label class="option-item"><input type="radio" name="q16" value="C"> C) (Sham 2010, First) and (Sham 2010, Second)</label>
+            <label class="option-item"><input type="radio" name="q16" value="D"> (Sham 2010) and (Sham 2010*)</label>
+        </div>
+        <div class="explanation" id="ex16"><strong>Explanation:</strong> Add lower case alphabetical suffixes (a, b, c) attached cleanly to the year without spacing.</div>
+    </div>
+
+    <!-- Question 17 -->
+    <div class="question-card" id="q17-card">
+        <p class="question-text">17. Which of the following shows the correct implementation for secondary source referencing (citing an author via someone else's work)?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q17" value="A"> A) (Krause 2001, cited by Mohamad 2006)</label>
+            <label class="option-item"><input type="radio" name="q17" value="B"> B) (Krause 2001 seperti yang dipetik oleh Mohamad 2006)</label>
+            <label class="option-item"><input type="radio" name="q17" value="C"> C) (Krause 2001 as cited in Mohamad 2006)</label>
+            <label class="option-item"><input type="radio" name="q17" value="D"> Both B and C are correct depending on the language of the thesis.</label>
+        </div>
+        <div class="explanation" id="ex17"><strong>Explanation:</strong> If writing in Malay, use "seperti yang dipetik oleh". If writing in English, use "as cited in". No commas are placed between names and years.</div>
+    </div>
+
+    <!-- Question 18 -->
+    <div class="question-card" id="q18-card">
+        <p class="question-text">18. What string label is integrated when formatting a text citation for a document with no identified author or corporate owner?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q18" value="A"> A) (N.A. 2012)</label>
+            <label class="option-item"><input type="radio" name="q18" value="B"> B) (Anon. 2012)</label>
+            <label class="option-item"><input type="radio" name="q18" value="C"> C) (Unknown 2012)</label>
+            <label class="option-item"><input type="radio" name="q18" value="D"> (Void 2012)</label>
+        </div>
+        <div class="explanation" id="ex18"><strong>Explanation:</strong> Set the acronym "Anon." (standing for Anonymous) directly in place of the author's name string.</div>
+    </div>
+
+    <!-- Question 19 -->
+    <div class="question-card" id="q19-card">
+        <p class="question-text">19. If you are citing a personal communication or an interview that is not retrievable in public data collections, how should it be structured?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q19" value="A"> A) Treat it like a standard book: (Ahmad 2023)</label>
+            <label class="option-item"><input type="radio" name="q19" value="B"> B) (Ahmad, personal communication, 12 March 2023)</label>
+            <label class="option-item"><input type="radio" name="q19" value="C"> C) (Ahmad 2023, komunikasi peribadi)</label>
+            <label class="option-item"><input type="radio" name="q19" value="D"> Both B and C are acceptable variant text indicators based on thesis language rules.</label>
+        </div>
+        <div class="explanation" id="ex19"><strong>Explanation:</strong> Personal communications / communication records highlight the event details within the brackets but are omitted from the final reference list because they cannot be verified by readers.</div>
+    </div>
+
+    <!-- Question 20 -->
+    <div class="question-card" id="q20-card">
+        <p class="question-text">20. For corporate or institutional authors (e.g., Department of Occupational Safety and Health), how is the first citation written?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q20" value="A"> A) Just the abbreviation: (DOSH 2010)</label>
+            <label class="option-item"><input type="radio" name="q20" value="B"> B) Complete corporate name on first instance, followed by its acronym in brackets: Department of Occupational Safety and Health (DOSH 2010)</label>
+            <label class="option-item"><input type="radio" name="q20" value="C"> C) (Department of Occupational Safety and Health, DOSH, 2010)</label>
+            <label class="option-item"><input type="radio" name="q20" value="D"> Write the acronym in bold: (<b>DOSH</b> 2010)</label>
+        </div>
+        <div class="explanation" id="ex20"><strong>Explanation:</strong> Spell out the entity name on first contact, followed immediately by the initialized acronym and year within the citation brackets. Subseqent references can use just the acronym.</div>
+    </div>
+
+    <!-- SECTION 3 -->
+    <div class="section-divider">Part 3: Reference List Formatting Constraints</div>
+
+    <!-- Question 21 -->
+    <div class="question-card" id="q21-card">
+        <p class="question-text">21. What line spacing rule governs individual entries inside the final 'References' section?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q21" value="A"> A) 1.5 line spacing</label>
+            <label class="option-item"><input type="radio" name="q21" value="B"> B) Double line spacing</label>
+            <label class="option-item"><input type="radio" name="q21" value="C"> C) Single line spacing</label>
+            <label class="option-item"><input type="radio" name="q21" value="D"> D) 1.15 line spacing</label>
+        </div>
+        <div class="explanation" id="ex21"><strong>Explanation:</strong> Unlike the body text which uses 1.5 line spacing, the reference list entries themselves must be single-spaced.</div>
+    </div>
+
+    <!-- Question 22 -->
+    <div class="question-card" id="q22-card">
+        <p class="question-text">22. How should a Western author's name with a surname (e.g., Humphrey John Moule Bowen) be formatted in the reference list?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q22" value="A"> A) Humphrey, J.M.B.</label>
+            <label class="option-item"><input type="radio" name="q22" value="B"> B) Bowen, H.J.M.</label>
+            <label class="option-item"><input type="radio" name="q22" value="C"> C) Bowen, Humphrey J. M.</label>
+            <label class="option-item"><input type="radio" name="q22" value="D"> B. Humphrey John Moule</label>
+        </div>
+        <div class="explanation" id="ex22"><strong>Explanation:</strong> Western names are inverted: Surname first, then a comma, followed immediately by initials without spaces between them (e.g., <code>Bowen, H.J.M.</code>).</div>
+    </div>
+
+    <!-- Question 23 -->
+    <div class="question-card" id="q23-card">
+        <p class="question-text">23. Which element must be completely excluded when listing an author's name in a GAYA UKM reference entry?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q23" value="A"> A) Middle initials</label>
+            <label class="option-item"><input type="radio" name="q23" value="B"> B) Academic titles or honorifics (e.g., Prof., Dr., Tun, Tan Sri)</label>
+            <label class="option-item"><input type="radio" name="q23" value="C"> C) The primary surname</label>
+            <label class="option-item"><input type="radio" name="q23" value="D"> Co-author string elements</label>
+        </div>
+        <div class="explanation" id="ex23"><strong>Explanation:</strong> Academic and honorary titles are entirely removed. Prof. Dr. Shaharir Mohd Zain is written simply as <code>Shaharir Mohd Zain</code>.</div>
+    </div>
+
+    <!-- Question 24 -->
+    <div class="question-card" id="q24-card">
+        <p class="question-text">24. For web resources, what parameter must be placed inside square brackets at the absolute end of the reference entry?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q24" value="A"> A) [The URL link]</label>
+            <label class="option-item"><input type="radio" name="q24" value="B"> B) [The original publication date]</label>
+            <label class="option-item"><input type="radio" name="q24" value="C"> C) [The access date, e.g., 20 July 2009 or 20 Julai 2009]</label>
+            <label class="option-item"><input type="radio" name="q24" value="D"> D) [The developer team name]</label>
+        </div>
+        <div class="explanation" id="ex24"><strong>Explanation:</strong> Online sources require an explicit statement of the date you accessed the resource, contained in square brackets at the end.</div>
+    </div>
+
+    <!-- Question 25 -->
+    <div class="question-card" id="q25-card">
+        <p class="question-text">25. What is the rule for spacing between individual entries in the final reference list?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q25" value="A"> A) No space at all between items</label>
+            <label class="option-item"><input type="radio" name="q25" value="B"> B) Double-line space gap between items</label>
+            <label class="option-item"><input type="radio" name="q25" value="C"> C) A single-line space gap between items</label>
+            <label class="option-item"><input type="radio" name="q25" value="D"> D) Triple-line space gap between items</label>
+        </div>
+        <div class="explanation" id="ex25"><strong>Explanation:</strong> While each entry is single-spaced internally, a single-line space gap is required between distinct entries to maintain scannability.</div>
+    </div>
+
+    <!-- Question 26 -->
+    <div class="question-card" id="q26-card">
+        <p class="question-text">26. Identify the precise punctuation error in this book reference entry based on GAYA UKM rules:<br><code>Miller, R.K., 2009. The Informed Argument. San Diego: Harcourt Brace.</code></p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q26" value="A"> A) The book title should not be italicized.</label>
+            <label class="option-item"><input type="radio" name="q26" value="B"> B) There should be no comma between the initials and the year of publication.</label>
+            <label class="option-item"><input type="radio" name="q26" value="C"> C) The city should be at the absolute end.</label>
+            <label class="option-item"><input type="radio" name="q26" value="D"> D) The publisher must come before the city.</label>
+        </div>
+        <div class="explanation" id="ex26"><strong>Explanation:</strong> In GAYA UKM, there is no comma between the author block and the year. It should read: <code>Miller, R.K. 2009.</code></div>
+    </div>
+
+    <!-- Question 27 -->
+    <div class="question-card" id="q27-card">
+        <p class="question-text">27. In a journal reference entry, what do the values '72' and '113-123' stand for in this string: <code>...Research 72: 113-123.</code>?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q27" value="A"> A) 72 is the page count, 113-123 is the serial number</label>
+            <label class="option-item"><input type="radio" name="q27" value="B"> B) 72 is the issue number, 113-123 is the article ID</label>
+            <label class="option-item"><input type="radio" name="q27" value="C"> C) 72 is the volume number, 113-123 is the page range</label>
+            <label class="option-item"><input type="radio" name="q27" value="D"> D) 72 is the chapter, 113-123 is the year subset</label>
+        </div>
+        <div class="explanation" id="ex27"><strong>Explanation:</strong> The number immediately following the italicized journal name is the volume number, followed by a colon and the page range of the article.</div>
+    </div>
+
+    <!-- Question 28 -->
+    <div class="question-card" id="q28-card">
+        <p class="question-text">28. How are Malay authors without a family surname handled in the final reference list?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q28" value="A"> A) Their names are inverted exactly like Western names.</label>
+            <label class="option-item"><input type="radio" name="q28" value="B"> B) They are listed according to their first name as written, without inverting.</label>
+            <label class="option-item"><input type="radio" name="q28" value="C"> C) Only their father's name is listed.</label>
+            <label class="option-item"><input type="radio" name="q28" value="D"> D) They must be grouped under a separate section for local papers.</label>
+        </div>
+        <div class="explanation" id="ex28"><strong>Explanation:</strong> Malay names are not inverted. They are written in their natural order (e.g., <code>Asmah Haji Omar</code> is alphabetized under 'A').</div>
+    </div>
+
+    <!-- Question 29 -->
+    <div class="question-card" id="q29-card">
+        <p class="question-text">29. When a journal article has an issue number in addition to a volume number, how is it represented under GAYA UKM guidelines?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q29" value="A"> A) 72(4): 113-123</label>
+            <label class="option-item"><input type="radio" name="q29" value="B"> B) 72, No. 4: 113-123</label>
+            <label class="option-item"><input type="radio" name="q29" value="C"> C) 72 Issue 4, 113-123</label>
+            <label class="option-item"><input type="radio" name="q29" value="D"> 72/4/113-123</label>
+        </div>
+        <div class="explanation" id="ex29"><strong>Explanation:</strong> The issue number is enclosed in parentheses directly after the volume number, without spaces, followed by a colon and the pages: <code>72(4): 113-123</code>.</div>
+    </div>
+
+    <!-- Question 30 -->
+    <div class="question-card" id="q30-card">
+        <p class="question-text">30. What is the correct order of elements for an edited book compilation reference entry?</p>
+        <div class="options-list">
+            <label class="option-item"><input type="radio" name="q30" value="A"> A) Title. Editor. Year. Publisher.</label>
+            <label class="option-item"><input type="radio" name="q30" value="B"> B) Editor Name. Year. Book Title (Ed. / Peny.). City: Publisher.</label>
+            <label class="option-item"><input type="radio" name="q30" value="C"> C) Publisher. City. Year. Editor Name.</label>
+            <label class="option-item"><input type="radio" name="q30" value="D"> Editor Name. (Ed.). Book Title. Publisher: City. Year.</label>
+        </div>
+        <div class="explanation" id="ex30"><strong>Explanation:</strong> For an edited book compilation, list the Editor(s), Year, Book Title (followed by <code>Ed.</code> for English or <code>Peny.</code> for Malay in parentheses), City of publication, and finally the Publisher name.</div>
+    </div>
+
+</div>
+
+<script>
+    // Configuration dictionary detailing correct solutions matching answer choices
+    const solutions = {
+        q1: 'B', q2: 'C', q3: 'B', q4: 'B', q5: 'C',
+        q6: 'D', q7: 'C', q8: 'B', q9: 'B', q10: 'C',
+        q11: 'C', q12: 'B', q13: 'B', q14: 'B', q15: 'B',
+        q16: 'B', q17: 'D', q18: 'B', q19: 'D', q20: 'B',
+        q21: 'C', q22: 'B', q23: 'B', q24: 'C', q25: 'C',
+        q26: 'B', q27: 'C', q28: 'B', q29: 'A', q30: 'B'
+    };
+
+    let points = {};
+    const summaryDisplay = document.getElementById('scoreSummary');
+
+    function updateScoreSummary() {
+        const totalIdentified = Object.keys(points).length;
+        const totalCorrectAnswers = Object.values(points).reduce((acc, curr) => acc + curr, 0);
+        summaryDisplay.textContent = `Score: ${totalCorrectAnswers} / 30 correct (${totalIdentified} attempted)`;
+    }
+
+    // Attach immediate interactive evaluation events to all radio items
+    document.querySelectorAll('.option-item input[type="radio"]').forEach(element => {
+        element.addEventListener('change', function() {
+            const currentQuestionId = this.name; 
+            const chosenOptionValue = this.value;
+            const validSolutionValue = solutions[currentQuestionId];
+            
+            const parentBlock = document.getElementById(currentQuestionId + '-card');
+            const sisterLabels = parentBlock.querySelectorAll('.option-item');
+            const targetExplanation = document.getElementById('ex' + currentQuestionId.slice(1));
+
+            // Reset design attributes across current sibling choices
+            sisterLabels.forEach(lbl => {
+                lbl.classList.remove('correct', 'incorrect');
+            });
+
+            // Evaluate chosen condition accuracy
+            if (chosenOptionValue === validSolutionValue) {
+                this.parentElement.classList.add('correct');
+                points[currentQuestionId] = 1;
+            } else {
+                this.parentElement.classList.add('incorrect');
+                points[currentQuestionId] = 0;
+
+                // Emphasize correct layout value instantly for study clarity
+                sisterLabels.forEach(lbl => {
+                    if (lbl.querySelector('input').value === validSolutionValue) {
+                        lbl.classList.add('correct');
+                    }
+                });
+            }
+
+            // Expose the hidden rationale metadata block
+            targetExplanation.style.display = 'block';
+            updateScoreSummary();
+        });
+    });
+</script>
+
+</body>
+</html>

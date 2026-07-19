@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: Sampling Distributions</title>
+    <style>
+        :root {
+            --primary: #003366;
+            --secondary: #e06666;
+            --accent: #e67e22;
+            --bg: #f4f7f6;
+            --card-bg: #ffffff;
+            --text: #333333;
+            --success: #27ae60;
+            --error: #c0392b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 { margin: 0; font-size: 2rem; }
+        p.subtitle { margin: 5px 0 0 0; opacity: 0.9; font-size: 1rem; }
+        
+        .quiz-info {
+            background: #eef2f7;
+            border-left: 5px solid var(--primary);
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .question-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .question-card:hover {
+            transform: translateY(-2px);
+        }
+        .question-num {
+            font-weight: bold;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .question-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .option-item {
+            margin-bottom: 10px;
+        }
+        .option-label {
+            display: block;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .option-label:hover {
+            background: #f1f3f5;
+            border-color: #ced4da;
+        }
+        input[type="radio"] {
+            margin-right: 10px;
+            transform: scale(1.1);
+            vertical-align: middle;
+        }
+        
+        /* Feedback States */
+        .correct {
+            background-color: #d4edda !important;
+            border-color: var(--success) !important;
+            color: #155724;
+            font-weight: bold;
+        }
+        .incorrect {
+            background-color: #f8d7da !important;
+            border-color: var(--error) !important;
+            color: #721c24;
+        }
+        
+        .explanation {
+            margin-top: 15px;
+            padding: 12px;
+            background: #eaf2f8;
+            border-left: 4px solid #2980b9;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .actions {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+        .btn:hover {
+            background-color: #002244;
+            transform: translateY(-1px);
+        }
+        
+        #result-box {
+            display: none;
+            background: white;
+            border: 3px solid var(--primary);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .score-display {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>The Architecture of Inference Quiz</h1>
+        <p class="subtitle">Mastering Sampling Distributions & Statistical Inference</p>
+    </header>
+
+    <div class="quiz-info">
+        <strong>Directions:</strong> Read each question carefully and select the best answer choice. Once finished, click the <strong>Submit Quiz</strong> button at the bottom to view your total score, correct options, and complete answers.
+    </div>
+
+    <form id="quiz-form">
+        <!-- Q1 -->
+        <div class="question-card">
+            <div class="question-num">Question 1</div>
+            <div class="question-text">Which branch of statistics allows a researcher to draw conclusions about a population on the basis of a sample's descriptive statistics?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q1" value="A"> A) Descriptive Statistics</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q1" value="B"> B) Inferential Statistics</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q1" value="C"> C) Qualitative Analysis</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q1" value="D"> D) Categorical Parameters</label></li>
+            </ul>
+            <div class="explanation" id="exp-q1"><strong>Explanation:</strong> Inferential statistics acts as the bridge spanning the gap between known data (samples) and unknowable populations.</div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-card">
+            <div class="question-num">Question 2</div>
+            <div class="question-text">According to the "Mnemonic Anchor" rules of data source and measurement, which pairing is completely correct?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q2" value="A"> A) Parameters belong to Samples; Statistics belong to Populations</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q2" value="B"> B) Proportions belong to Parameters; Means belong to Statistics</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q2" value="C"> C) Parameters come from Populations; Statistics come from Samples</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q2" value="D"> D) Variability belongs to Parameters; Center belongs to Samples</label></li>
+            </ul>
+            <div class="explanation" id="exp-q2"><strong>Explanation:</strong> Remember the anchor rule: PP (Parameters come from Populations) and SS (Statistics come from Samples).</div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question-card">
+            <div class="question-num">Question 3</div>
+            <div class="question-text">Why can a calculated sample statistic be thought of and modeled as a random variable?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q3" value="A"> A) Because it is always unknown and cannot be calculated directly</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q3" value="B"> B) Because its value remains constant across all potential sample choices</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q3" value="C"> C) Because it takes numerical values that vary depending on the outcomes of a random sampling process</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q3" value="D"> D) Because it describes the characteristics of an entire population without error</label></li>
+            </ul>
+            <div class="explanation" id="exp-q3"><strong>Explanation:</strong> Different random samples yield different statistics. This basic reality is called sampling variability, making the statistic act as a random variable.</div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="question-card">
+            <div class="question-num">Question 4</div>
+            <div class="question-text">Which of the following describes the theoretical sampling distribution of a statistic?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q4" value="A"> A) The distribution of individual values observed within one isolated sample</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q4" value="B"> B) The absolute distribution of all data points contained inside the parent population</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q4" value="C"> C) The target checklist used to decide if a chosen sample size is perfectly independent</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q4" value="D"> D) The theoretical distribution of values taken by the statistic in all possible samples of the same size from the same population</label></li>
+            </ul>
+            <div class="explanation" id="exp-q4"><strong>Explanation:</strong> A sampling distribution maps all possible sample values of that specific size along with their probabilities of occurring.</div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="question-card">
+            <div class="question-num">Question 5</div>
+            <div class="question-text">What are the three steps involved in a single iteration of the cyclical Simulation Loop used to imitate repeated sampling?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q5" value="A"> A) Extract (Take an SRS), Compute (Record sample statistic), Replace (Return elements to the bag)</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q5" value="B"> B) Parameterize, Sample, Adjust</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q5" value="C"> C) Categorize, Standardize, Graph</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q5" value="D"> D) Infer, Measure, Generalize</label></li>
+            </ul>
+            <div class="explanation" id="exp-q5"><strong>Explanation:</strong> Simulation involves repeatedly extracting an SRS, computing/recording the statistic, and replacing the items back into the pool.</div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="question-card">
+            <div class="question-num">Question 6</div>
+            <div class="question-text">When an estimator is described as an "unbiased estimator," what does this imply about the center of its sampling distribution?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q6" value="A"> A) The mean of its sampling distribution is exactly equal to zero</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q6" value="B"> B) The mean of its sampling distribution is equal to the true value of the population parameter being estimated</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q6" value="C"> C) The spread of its sampling distribution equals the raw chaos of the population</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q6" value="D"> D) Its standard deviation is completely minimized to a value of 1.0</label></li>
+            </ul>
+            <div class="explanation" id="exp-q6"><strong>Explanation:</strong> An unbiased estimator means our "aim is true" because the average of all possible sample statistics aligns with the true target parameter.</div>
+        </div>
+
+        <!-- Q7 -->
+        <div class="question-card">
+            <div class="question-num">Question 7</div>
+            <div class="question-text">What major advantage do larger sample sizes (e.g., n = 1000 vs. n = 100) offer in terms of evaluating trust?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q7" value="A"> A) They completely eliminate the presence of system biases</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q7" value="B"> B) They alter the shape of the baseline population distribution to make it Normal</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q7" value="C"> C) They drastically reduce the spread (variability) of the sampling distribution</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q7" value="D"> D) They increase the value of the true population parameter</label></li>
+            </ul>
+            <div class="explanation" id="exp-q7"><strong>Explanation:</strong> Larger samples shrink the variability multiplier, focusing the lens and making it highly probable to obtain a sample statistic close to the true parameter.</div>
+        </div>
+
+        <!-- Q8 -->
+        <div class="question-card">
+            <div class="question-num">Question 8</div>
+            <div class="question-text">To get an ideal, trustworthy estimate of a population target, what properties are desired within the diagnostic target matrix?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q8" value="A"> A) High Bias, Low Variability</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q8" value="B"> B) Low Bias, High Variability</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q8" value="C"> C) High Bias, High Variability</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q8" value="D"> D) No Bias, Low Variability</label></li>
+            </ul>
+            <div class="explanation" id="exp-q8"><strong>Explanation:</strong> "No Bias, Low Variability" ensures your hits cluster tight and land directly on the true bullseye target.</div>
+        </div>
+
+        <!-- Q9 -->
+        <div class="question-card">
+            <div class="question-num">Question 9</div>
+            <div class="question-text">Which type of data and tracking statistic are paired together when exploring categorical variable questions like "What percentage?"</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q9" value="A"> A) Quantitative Data and Sample Means (x̄)</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q9" value="B"> B) Categorical Data and Sample Proportions (p̂)</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q9" value="C"> C) Bimodal Data and Standard Deviations (σ)</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q9" value="D"> D) Erratic Data and Medians</label></li>
+            </ul>
+            <div class="explanation" id="exp-q9"><strong>Explanation:</strong> Categorical tracking asks about success/failure rates, shifting our analysis path over to Sample Proportions (p̂).</div>
+        </div>
+
+        <!-- Q10 -->
+        <div class="question-card">
+            <div class="question-num">Question 10</div>
+            <div class="question-text">What formula determines the standard deviation (spread) of the sampling distribution for a sample proportion (p̂)?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q10" value="A"> A) σ / √n</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q10" value="B"> B) np(1 - p)</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q10" value="C"> C) √[ p(1 - p) / n ]</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q10" value="D"> D) μ / n</label></li>
+            </ul>
+            <div class="explanation" id="exp-q10"><strong>Explanation:</strong> The anatomy of spread for categorical data states that standard deviation equals √[ p(1 - p) / n ].</div>
+        </div>
+
+        <!-- Q11 -->
+        <div class="question-card">
+            <div class="question-num">Question 11</div>
+            <div class="question-text">At what value of the true population parameter (p) is the standard deviation variance of a sample proportion maximized?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q11" value="A"> A) p = 0.0</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q11" value="B"> B) p = 0.10</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q11" value="C"> C) p = 0.50</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q11" value="D"> D) p = 1.0</label></li>
+            </ul>
+            <div class="explanation" id="exp-q11"><strong>Explanation:</strong> Inherent variance in the population numerator reaches its mathematical maximum when p = 0.5.</div>
+        </div>
+
+        <!-- Q12 -->
+        <div class="question-card">
+            <div class="question-num">Question 12</div>
+            <div class="question-text">What two constraints must be fulfilled to satisfy "The Normal Condition" before running normal distribution metrics for a proportion?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q12" value="A"> A) n ≤ 10 and N ≥ 100</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q12" value="B"> B) np ≥ 10 and n(1 - p) ≥ 10</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q12" value="C"> C) n / N ≤ 0.10</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q12" value="D"> D) μ ≥ 30 and σ ≤ 5</label></li>
+            </ul>
+            <div class="explanation" id="exp-q12"><strong>Explanation:</strong> The large-enough checklist ensures you expect a minimum of 10 successes (np) and 10 failures (n(1-p)).</div>
+        </div>
+
+        <!-- Q13 -->
+        <div class="question-card">
+            <div class="question-num">Question 13</div>
+            <div class="question-text">What constraint does the "10% Condition" impose on our random sampling process without replacement?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q13" value="A"> A) The sample size n must be no larger than 10% of the total population size N (n ≤ 1/10 N)</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q13" value="B"> B) The sample size must always contain exactly 10 distinct individuals</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q13" value="C"> C) The probability of getting a success cannot exceed 10%</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q13" value="D"> D) The standard deviation of the sampling distribution must equal 10% of the mean</label></li>
+            </ul>
+            <div class="explanation" id="exp-q13"><strong>Explanation:</strong> To safely maintain conditions of independence when sampling without replacement, the sample size can be at most 10% of the total population.</div>
+        </div>
+
+        <!-- Q14 -->
+        <div class="question-card">
+            <div class="question-num">Question 14</div>
+            <div class="question-text">The sampling distribution of a sample mean (x̄) is centered precisely around which value?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q14" value="A"> A) The sample standard deviation (s)</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q14" value="B"> B) The sample size value (n)</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q14" value="C"> C) The true population mean (μ)</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q14" value="D"> D) The categorical population proportion (p)</label></li>
+            </ul>
+            <div class="explanation" id="exp-q14"><strong>Explanation:</strong> Quantitatively tracking quantitative data shows that the mean of the sampling distribution of x̄ is equal to μ.</div>
+        </div>
+
+        <!-- Q15 -->
+        <div class="question-card">
+            <div class="question-num">Question 15</div>
+            <div class="question-text">What mathematical expression determines the standard deviation of the sampling distribution of a sample mean (x̄)?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q15" value="A"> A) √[ p(1 - p) / n ]</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q15" value="B"> B) σ / √n</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q15" value="C"> C) σ · √n</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q15" value="D"> D) μ / σ</label></li>
+            </ul>
+            <div class="explanation" id="exp-q15"><strong>Explanation:</strong> The spread decreases by a factor equal to the square root of your sample size, written as σ / √n.</div>
+        </div>
+
+        <!-- Q16 -->
+        <div class="question-card">
+            <div class="question-num">Question 16</div>
+            <div class="question-text">How does the total spread of a sample mean's sampling distribution compare to the spread of its original, raw source population?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q16" value="A"> A) The sampling distribution is always more spread out than the population</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q16" value="B"> B) The sampling distribution is always less spread out than the raw population distribution</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q16" value="C"> C) The spreads are identical regardless of sample size adjustments</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q16" value="D"> D) The sample mean distribution contains no measurable spread or chaos</label></li>
+            </ul>
+            <div class="explanation" id="exp-q16"><strong>Explanation:</strong> Because n resides in the denominator of the standard deviation formula, individual extreme values average out, making the sample distribution narrower.</div>
+        </div>
+
+        <!-- Q17 -->
+        <div class="question-card">
+            <div class="question-num">Question 17</div>
+            <div class="question-text">In the height case study of young women (N(64.5, 2.5)), the probability of a single individual exceeding 66.5 inches is 21%. Why does the probability of an SRS of 10 women averaging over 66.5 inches shrink to less than 1%?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q17" value="A"> A) Because the population mean changes value when multiple people are evaluated</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q17" value="B"> B) Because extreme individual results average out when aggregated inside a sample group</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q17" value="C"> C) Because sampling women without replacement introduces severe targeting bias</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q17" value="D"> D) Because the standard deviation multiplier increases alongside n</label></li>
+            </ul>
+            <div class="explanation" id="exp-q17"><strong>Explanation:</strong> The "shrinking shadow of variance" dictates that while one individual can easily be an extreme outlier, an average of 10 items pulling together is very unlikely to stay extreme.</div>
+        </div>
+
+        <!-- Q18 -->
+        <div class="question-card">
+            <div class="question-num">Question 18</div>
+            <div class="question-text">What fundamental law states that when a sample size is large enough, the sampling distribution of means will be very close to Normal, regardless of the population's shape?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q18" value="A"> A) The Law of Large Sampling Parameters</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q18" value="B"> B) The Central Limit Theorem (CLT)</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q18" value="C"> C) The Binary Variance Multiplier Rule</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q18" value="D"> D) The Diagnostic Matrix Constraint</label></li>
+            </ul>
+            <div class="explanation" id="exp-q18"><strong>Explanation:</strong> The Central Limit Theorem guarantees a convergence to a Normal shape for sample means as sample size increases, even if the parent distribution is skewed, bimodal, or chaotic.</div>
+        </div>
+
+        <!-- Q19 -->
+        <div class="question-card">
+            <div class="question-num">Question 19</div>
+            <div class="question-text">What is the shape condition needed to apply standard normal probability calculations to sample means (x̄) if the sample size is small?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q19" value="A"> A) The population distribution must be heavily skewed</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q19" value="B"> B) The sample data points must look bimodal</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q19" value="C"> C) The underlying source population distribution must be Normal</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q19" value="D"> D) The parameter rate p must be exactly 0.50</label></li>
+            </ul>
+            <div class="explanation" id="exp-q19"><strong>Explanation:</strong> If sample sizes are small, the sampling distribution will only be Normal if the parent source population itself is Normal from the start.</div>
+        </div>
+
+        <!-- Q20 -->
+        <div class="question-card">
+            <div class="question-num">Question 20</div>
+            <div class="question-text">When looking at the three distinct distributions in statistical workflows, what does a "Distribution of Sample Data" illustrate?</div>
+            <ul class="options-list">
+                <li class="option-item"><label class="option-label"><input type="radio" name="q20" value="A"> A) Values and outcomes across all individuals contained within one single, observed sample</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q20" value="B"> B) The true probabilities mapping every single individual in the whole population</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q20" value="C"> C) The static parameter value tracking a vast, unknowable truth</label></li>
+                <li class="option-item"><label class="option-label"><input type="radio" name="q20" value="D"> D) The collected statistic values calculated across all possible random sample sequences</label></li>
+            </ul>
+            <div class="explanation" id="exp-q20"><strong>Explanation:</strong> Distinguish carefully: Population tracking is all individuals; Sampling distribution is statistics from all possible samples; and a Sample Data distribution tracks individuals within just one single sample.</div>
+        </div>
+
+        <div class="actions">
+            <button type="button" class="btn" onclick="checkQuiz()">Submit Quiz</button>
+        </div>
+    </form>
+
+    <div id="result-box">
+        <h2>Your Results</h2>
+        <div class="score-display" id="score-text">0 / 20</div>
+        <p id="feedback-msg" style="font-size:1.2rem; font-weight:500;"></p>
+        <p>Review the color-coded feedback above on each question along with explanations to consolidate your understanding.</p>
+    </div>
+</div>
+
+<script>
+    const answers = {
+        q1: "B", q2: "C", q3: "C", q4: "D", q5: "A",
+        q6: "B", q7: "C", q8: "D", q9: "B", q10: "C",
+        q11: "C", q12: "B", q13: "A", q14: "C", q15: "B",
+        q16: "B", q17: "B", q18: "B", q19: "C", q20: "A"
+    };
+
+    function checkQuiz() {
+        let score = 0;
+        const total = 20;
+        const form = document.getElementById('quiz-form');
+
+        for (let i = 1; i <= total; i++) {
+            const key = 'q' + i;
+            const selected = form.elements[key].value;
+            const correctValue = answers[key];
+            const options = form.elements[key];
+            
+            // Loop over options to clear old styles and apply new ones
+            if(options && options.length) {
+                for(let j=0; j<options.length; j++) {
+                    const label = options[j].closest('.option-label');
+                    label.classList.remove('correct', 'incorrect');
+                    
+                    if(options[j].value === correctValue) {
+                        label.classList.add('correct');
+                    } else if(options[j].checked && options[j].value !== correctValue) {
+                        label.classList.add('incorrect');
+                    }
+                }
+            }
+
+            if (selected === correctValue) {
+                score++;
+            }
+            
+            // Display explanation panel
+            document.getElementById('exp-' + key).style.display = 'block';
+        }
+
+        // Display summary score block
+        const resBox = document.getElementById('result-box');
+        resBox.style.display = 'block';
+        document.getElementById('score-text').innerText = `${score} / ${total}`;
+        
+        let msg = "";
+        if(score === total) msg = "Perfect score! You completely understand the Architecture of Inference.";
+        else if(score >= 15) msg = "Great job! You have a solid grasp on these sampling concepts.";
+        else if(score >= 10) msg = "Passed! Go through the blue explanation tags to patch up any weak spots.";
+        else msg = "Keep studying! Review the relationships between samples, statistics, parameters, and distributions.";
+        
+        document.getElementById('feedback-msg').innerText = msg;
+        
+        // Smooth scroll down to results
+        resBox.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
